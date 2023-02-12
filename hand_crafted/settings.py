@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    # Installed Apps
+    'home.apps.HomeConfig',
 
-    # 3rd party apps
+    # 3rd party
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -62,7 +64,10 @@ ROOT_URLCONF = 'hand_crafted.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, "templates"),
+            os.path.join(BASE_DIR, "templates/allauth"),
+            ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
