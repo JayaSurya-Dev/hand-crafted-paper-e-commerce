@@ -6,8 +6,51 @@ body {
     background: url('/media/background-flowers.png') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: #555;
+    color: #121023bf;
     font-family: 'Montserrat', 'sans-serif';
+}
+
+.h4 {
+    font-size: 1.125em;
+}
+
+/* ------------------------------- Colours */
+.text-purple {
+    color: #8862d0 !important;
+}
+
+.text-darker-purple {
+    color: #544a92 !important;
+}
+
+.text-light-purple {
+    color: #e4e0ff !important;
+}
+
+.text-beige {
+    color: #d0b360 !important;
+}
+
+.text-brown {
+    color: #927d43 !important;
+}
+
+.bg-beige {
+    background-color: #d0b360 !important;
+}
+
+.bg-brown {
+    background-color: #927d43 !important;
+}
+
+.bg-header {
+    background-color: #e4e0ff !important;
+}
+
+#delivery-banner {
+    background-color: #544a92 !important;
+    color: #e4e0ff !important;
+    font-weight: 700 !important;
 }
 
 .logo-font {
@@ -19,39 +62,65 @@ body {
 }
 
 .shop-now-button {
-    background: #cde6f8;
-    color: black;
+    background: #d0b360;
+    color: #121022;
     min-width: 260px;
 }
 
 .btn-black {
-    background: black;
-    color: white;
+    background: #121022;
+    color: #e4e0ff;
 }
 
 .shop-now-button:hover,
 .shop-now-button:active,
-.shop-now-button:focus,
+.shop-now-button:focus {
+    background: #121022;
+    color: #e4e0ff;
+}
+
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
-    color: white;
+    background: #d0b360;
+    color: #121022;
+    border: 1px solid #d0b360 !important;
 }
 
 .text-black {
-    color: #000 !important;
+    color: #121022 !important;
 }
 
 .border-black {
-    border: 1px solid black !important;
+    border: 1px solid #121022 !important;
 }
 
 .bg-black {
-    background-color: #000 !important;
+    background-color: #121022 !important;
 }
 
-/* -------------------------------- Media Queries */
+.fa-hands {
+    color: #927d43;
+}
+
+.nav-item a:hover {
+    color: #927d43 !important;
+}
+
+.dropdown-menu {
+    background-color: #e4e0ff;
+}
+
+.dropdown-menu a:hover {
+    background-color: #d0b36292;
+    color: #121022 !important;
+}
+
+/* header>input[type="text"]:hover {
+    background-color: #d0b360;
+} */
+
+/* ---------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */
 @media (min-width: 1200px) {
@@ -77,9 +146,6 @@ body {
 
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
-    .header-container {
-        padding-top: 116px;
-    }
 
     body {
         height: calc(100vh - 116px);
@@ -101,9 +167,10 @@ body {
     .navbar-toggler {
         padding: .6rem .6rem;
         font-size: 1rem;
+        color: #927d43 !important;
     }
 
-    #delivery-banner h4 {
+    #delivery-banner p {
         font-size: .9rem;
     }
 
