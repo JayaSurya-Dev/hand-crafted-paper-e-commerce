@@ -10,8 +10,12 @@ body {
     font-family: 'Montserrat', 'sans-serif';
 }
 
-.h4 {
-    font-size: 1.125em;
+/* to avoid sudden layout shifts 
+    to improve user-experience 
+    https://web.dev/optimize-cls/?utm_source=lighthouse&utm_medium=devtools#images-without-dimensions */
+img {
+    height: auto;
+    width: 100%;
 }
 
 /* ------------------------------- Colours */
@@ -175,8 +179,8 @@ body {
     }
 
     .navbar-toggler i {
-        padding: .6rem .6rem;
-        font-size: 1rem;
+        padding: .2rem .2rem;
+        font-size: 1.4rem;
         color: #d0b360 !important;
     }
 

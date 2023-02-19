@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Category, Product
 from django.contrib.auth.decorators import login_required
 
@@ -16,7 +17,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 
 @admin.register(Product)
-class ProductAdmin(admin.ModelAdmin):
+class ProductAdmin(SummernoteModelAdmin):
+    summernote_fields = '__all__'
+
     list_display = (
         'name',
         'slug',
