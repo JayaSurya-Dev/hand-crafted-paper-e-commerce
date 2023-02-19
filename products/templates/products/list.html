@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}
+    {% if category %} | {{ category.friendly_name }} {% else %} | Products {% endif %}
+{% endblock extra_title %}
+
 {% block page_header %}
     <div class="container header-container">
         <div class="row">
@@ -14,7 +18,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">Products</h2>
+                <h2 class="logo-font">
+                    {% if category %} {{ category.friendly_name }} {% else %} Products {% endif %}
+                </h2>
                 <hr class="w-50 mb-1">
             </div>
         </div>
@@ -23,13 +29,17 @@
                 <div class="row mt-1 mb-2"></div>
                 <div class="row">
                     {% for product in products %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                <a href="{% url 'products:product_detail' product.id %}">
+                        <main class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                            <article class="card h-100 border-0">
+                                <a href="{{ product.get_absolute_url }}">
                                     <img class="card-img-top img-fluid" src="{% if product.image %} {{ product.image.url }}{% else %} {{ MEDIA_URL }}noimage.png {% endif %}" alt="{{ product.name }}">
                                 </a>
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                    <p class="mb-0">
+                                    <a class="text-link" href="{{ product.get_absolute_url }}">
+                                        {{ product.name }}
+                                    </a>
+                                    </p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
@@ -43,8 +53,8 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                            </article>
+                        </main>
                         {% if forloop.counter|divisibleby:1 %}
                             <div class="col-12 d-sm-none mb-5">
                                 <hr>

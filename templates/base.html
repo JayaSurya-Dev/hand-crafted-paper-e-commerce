@@ -33,7 +33,7 @@
   {% block extra_js %}
   {% endblock extra_js %}
 
-  <title>Hand Crafted Paper {% block extra_title %}{% endblock %}</title>
+  <title>Hand-Crafted Designs {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
     <header class="container-fluid fixed-top-desktop-only">
@@ -44,7 +44,7 @@
             </a>
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
-            <form method="GET" action="">
+            <form method="GET" action="{% url 'products:product_list' %}">
                 <div class="input-group w-100">
                     <input class="form-control border border-black bg-header rounded-0" type="text" name="q" placeholder="Search our collections">
                     <div class="input-group-append">
@@ -116,9 +116,9 @@
         </div>
     </header>
 
-  {% if messages %}
-      <div class="message-container"></div>
-  {% endif %}
+    {% if messages %}
+        <div class="message-container"></div>
+    {% endif %}
 
   {% block page_header %}
   {% endblock page_header %}

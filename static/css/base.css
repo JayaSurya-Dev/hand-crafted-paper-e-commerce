@@ -39,6 +39,15 @@ img {
     color: #927d43 !important;
 }
 
+.text-link {
+    text-decoration: none;
+    color: #121022;
+}
+
+.text-link:hover {
+    color: #121022;
+}
+
 .bg-beige {
     background-color: #d0b360 !important;
 }
@@ -152,6 +161,7 @@ img {
 @media (min-width: 992px) {
     .fixed-top-desktop-only {
         position: fixed;
+        /* remember => position: inherit; pushes messages and page_header down*/
         top: 0;
         right: 0;
         left: 0;
@@ -160,6 +170,24 @@ img {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* adjust text size in smaller screens */
+@media (min-width: 1250px) {
+    header h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 1250px) {
+    header h2 {
+        font-size: 1.1rem;
+    }
+
+    #main-nav a,
+    #delivery-banner p {
+        font-size: smaller;
     }
 }
 

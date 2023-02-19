@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Category(models.Model):
@@ -29,6 +30,11 @@ class Category(models.Model):
     def get_friendly_name(self):
         """ Get the category friendly name """
         return self.friendly_name
+
+    def get_absolute_url(self):
+        """ Get the product category absolute url """
+        return reverse('products:product_list_by_category',
+                       args=[self.slug])
 
 
 class Product(models.Model):
@@ -66,3 +72,8 @@ class Product(models.Model):
     def __str__(self):
         """ Returns category name """
         return self.name
+
+    def get_absolute_url(self):
+        """ Get the product detail absolute url """
+        return reverse('products:product_detail',
+                       args=[self.id, self.slug])
