@@ -116,6 +116,16 @@ body {
     color: #121022 !important;
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background: #e4e0ff;
+    z-index: -1;
+}
+
 /* header>input[type="text"]:hover {
     background-color: #d0b360;
 } */
