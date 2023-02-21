@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     # Installed Apps
     'home.apps.HomeConfig',
     'products.apps.ProductsConfig',
+    'cart.apps.CartConfig',
 
     # 3rd party
     'allauth',

@@ -3,7 +3,8 @@ html {
 }
 
 :root {
-    --brown: #927d43;
+    --brown: #927d43 !important;
+    --black: #121022 !important;
 }
 
 body {
