@@ -22,11 +22,11 @@
                 Shadow Boxes
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="shadow-box-link">
-                <a href="#" class="dropdown-item">Full Flower Box</a>
-                <a href="#" class="dropdown-item">Heart Flower Box</a>
-                <a href="#" class="dropdown-item">Animal Flower Box</a>
-                <a href="#" class="dropdown-item">Initials & Numbers Flower Box</a>
-                <a href="#" class="dropdown-item">All Shadow Boxes</a>
+                <a href="{% url 'products:product_list' %}?category=full_flower_box" class="dropdown-item">Full Flower Box</a>
+                <a href="{% url 'products:product_list' %}?category=heart_flower_box" class="dropdown-item">Heart Flower Box</a>
+                <a href="{% url 'products:product_list' %}?category=animal_flower_box" class="dropdown-item">Animal Flower Box</a>
+                <a href="{% url 'products:product_list' %}?category=initial_number_flower_box" class="dropdown-item">Initials & Numbers Flower Box</a>
+                <a href="{% url 'products:product_list' %}?category=full_flower_box,heart_flower_box,initial_number_flower_box,animal_flower_box" class="dropdown-item">All Shadow Boxes</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -34,9 +34,9 @@
                 Cards
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="card-link">
-                <a href="#" class="dropdown-item">Christening Card</a>
-                <a href="#" class="dropdown-item">Communion Card</a>
-                <a href="#" class="dropdown-item">All Cards</a>
+                <a href="{% url 'products:product_list' %}?category=christening_card" class="dropdown-item">Christening Card</a>
+                <a href="{% url 'products:product_list' %}?category=communion_card" class="dropdown-item">Communion Card</a>
+                <a href="{% url 'products:product_list' %}?category=christening_card,communion_card" class="dropdown-item">All Cards</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -44,9 +44,10 @@
                 Cake Toppers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="cake-topper-link">
-                <a href="#" class="dropdown-item">Birthday Cake Topper</a>
-                <a href="#" class="dropdown-item">Anniversary Cake Topper</a>
-                <a href="#" class="dropdown-item">All Cake Toppers</a>
+                <a href="{% url 'products:product_list' %}?category=birthday_cake_topper" class="dropdown-item">Birthday Cake Topper</a>
+                <a href="{% url 'products:product_list' %}?category=anniversary_cake_topper" class="dropdown-item">Anniversary Cake Topper</a>
+                <a href="{% url 'products:product_list' %}?category=wedding_cake_topper" class="dropdown-item">Wedding Cake Topper</a>
+                <a href="{% url 'products:product_list' %}?category=birthday_cake_topper,anniversary_cake_topper,wedding_cake_topper" class="dropdown-item">All Cake Toppers</a>
             </div>
         </li>
         <li class="nav-item dropdown">
@@ -64,10 +65,10 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="#" class="dropdown-item">New Products</a>
-                <a href="#" class="dropdown-item">Deals</a>
-                <a href="#" class="dropdown-item">Clearance</a>
-                <a href="#" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products:product_list' %}?category=new_products" class="dropdown-item">New Products</a>
+                <a href="{% url 'products:product_list' %}?category=deals" class="dropdown-item">Deals</a>
+                <a href="{% url 'products:product_list' %}?category=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products:product_list' %}?category=new_products,deals,clearance" class="dropdown-item">All Specials</a>
             </div>
         </li>
         <li class="nav-item">
