@@ -2,6 +2,10 @@ html {
     height: 100%;
 }
 
+:root {
+    --brown: #927d43;
+}
+
 body {
     background: url('/media/background-flowers_optimized.png') no-repeat center center fixed;
     background-size: cover;
@@ -19,6 +23,43 @@ img {
 }
 
 /* ------------------------------- Colours */
+
+.text-black {
+    color: #121022 !important;
+}
+
+.text-black75 {
+    color: #121023c0 !important;
+}
+
+.border-black {
+    border: 1px solid #121022 !important;
+}
+
+.bg-black {
+    background-color: #121022 !important;
+}
+
+.text-beige {
+    color: #d0b360 !important;
+}
+
+.bg-beige {
+    background-color: #d0b360 !important;
+}
+
+.text-brown {
+    color: #927d43 !important;
+}
+
+.border-brown {
+    border: 1px solid #927d43 !important;
+}
+
+.bg-brown {
+    background-color: #927d43 !important;
+}
+
 .text-purple {
     color: #8862d0 !important;
 }
@@ -31,14 +72,6 @@ img {
     color: #e4e0ff !important;
 }
 
-.text-beige {
-    color: #d0b360 !important;
-}
-
-.text-brown {
-    color: #927d43 !important;
-}
-
 .text-link {
     text-decoration: none;
     color: #121022;
@@ -46,14 +79,6 @@ img {
 
 .text-link:hover {
     color: #121022;
-}
-
-.bg-beige {
-    background-color: #d0b360 !important;
-}
-
-.bg-brown {
-    background-color: #927d43 !important;
 }
 
 .bg-header {
@@ -100,18 +125,6 @@ img {
     border: 1px solid #d0b360 !important;
 }
 
-.text-black {
-    color: #121022 !important;
-}
-
-.border-black {
-    border: 1px solid #121022 !important;
-}
-
-.bg-black {
-    background-color: #121022 !important;
-}
-
 .fa-hands {
     color: #927d43;
 }
@@ -144,8 +157,27 @@ img {
     z-index: -1;
 }
 
+a.category-badge>span.badge:hover {
+    background: #d0b360 !important;
+    color: #121022 !important;
+}
+
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+.btt-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
 /* header>input[type="text"]:hover {
-    background-color: #d0b360;
+    background: #d0b360 !important;
 } */
 
 /* ---------------------------- Media Queries */
