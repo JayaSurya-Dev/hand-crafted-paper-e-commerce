@@ -111,6 +111,13 @@ img {
     color: #e4e0ff;
 }
 
+.btn-outline-black {
+    background-color: #e4e0ff;
+    color: var(--black) !important;
+    /* use important to override colours for <a> elements */
+    border: 1px solid var(--black) !important;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus {
