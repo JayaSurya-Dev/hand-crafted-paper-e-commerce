@@ -23,7 +23,11 @@
 <div class="list-inline-item dropdown">
     <a class="text-black nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
+            {% if request.user.is_authenticated %}
+            <div><i class="fas fa-user fa-lg text-brown"></i></div>
+            {% else %}
             <div><i class="fas fa-user fa-lg"></i></div>
+            {% endif %}
             <p class="my-0">My Account</p>
         </div>
     </a>
@@ -41,9 +45,13 @@
     </div>
 </div>
 <div class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'cart:view_cart' %}">
+    <a class="{% if grand_total %}text-black font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'cart:view_cart' %}">
         <div class="text-center">
+            {% if grand_total %}
+            <div><i class="fas fa-shopping-bag fa-lg text-brown"></i></div>
+            {% else %}
             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+            {% endif %}
             <p class="my-0">
                 {% if grand_total %}
                     €{{ grand_total|floatformat:2 }}

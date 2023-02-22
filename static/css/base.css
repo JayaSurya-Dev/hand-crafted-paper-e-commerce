@@ -118,6 +118,14 @@ img {
     border: 1px solid var(--black) !important;
 }
 
+.btn-outline-black:hover,
+.btn-outline-black:active,
+.btn-outline-black:focus {
+    background: #d0b360;
+    color: var(--black) !important;
+    border: 1px solid #d0b360 !important;
+}
+
 .shop-now-button:hover,
 .shop-now-button:active,
 .shop-now-button:focus {
