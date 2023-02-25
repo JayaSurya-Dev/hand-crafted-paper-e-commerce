@@ -6,6 +6,10 @@ class Category(models.Model):
     """
     Database model for Category
     """
+    parent = models.ForeignKey('self',
+                               null=True, blank=True,
+                               related_name='children',
+                               on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=200, unique=True)
     friendly_name = models.CharField(max_length=200, null=True, blank=True)
@@ -44,9 +48,11 @@ class Product(models.Model):
     category = models.ForeignKey(Category, related_name='products',
                                  null=True, blank=True,
                                  on_delete=models.SET_NULL)
+    sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=250)
     slug = models.SlugField(max_length=250)
     description = models.TextField(blank=True)
+    has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True)

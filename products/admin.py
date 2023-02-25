@@ -11,6 +11,7 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'friendly_name',
         'name',
+        'parent',
         'slug',
         )
     prepopulated_fields = {'slug': ('name',)}
@@ -29,6 +30,7 @@ class ProductAdmin(SummernoteModelAdmin):
         'available',
         'created_on',
         'updated_on',
+        'image',
         )
 
     list_filter = (
