@@ -8,6 +8,9 @@ admin.site.login = login_required(admin.site.login)
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
+    """
+    Category model in admin panel
+    """
     list_display = (
         'friendly_name',
         'name',
@@ -19,6 +22,9 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(SummernoteModelAdmin):
+    """
+    Product model in admin panel
+    """
     summernote_fields = '__all__'
 
     list_display = (

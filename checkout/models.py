@@ -60,6 +60,7 @@ class Order(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
+        """ Return order number """
         return self.order_number
 
 
@@ -90,4 +91,5 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
+        """ Return SKU and order number """
         return f'SKU {self.product.sku} on order {self.order.order_number}'
