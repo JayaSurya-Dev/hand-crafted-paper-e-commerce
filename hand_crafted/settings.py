@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'products.apps.ProductsConfig',
     'cart.apps.CartConfig',
     'checkout.apps.CheckoutConfig',
+    'profiles.apps.ProfilesConfig',
 
     # 3rd party
     'allauth',
