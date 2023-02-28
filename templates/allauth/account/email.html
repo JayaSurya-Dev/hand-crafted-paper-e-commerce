@@ -4,8 +4,11 @@
 
 {% block head_title %}{% trans "Account" %}{% endblock %}
 
-{% block content %}
-    <h1>{% trans "E-mail Addresses" %}</h1>
+{% block inner_content %}
+    <hr>
+    <h2 class="logo-font mb-4">{% trans "E-mail Addresses" %}</h2>
+    <hr>
+
 {% if user.emailaddress_set.all %}
 <p>{% trans 'The following e-mail addresses are associated with your account:' %}</p>
 
@@ -53,7 +56,7 @@
         <button name="action_add" type="submit">{% trans "Add E-mail" %}</button>
     </form>
 
-{% endblock %}
+{% endblock inner_content %}
 
 
 {% block extra_body %}
