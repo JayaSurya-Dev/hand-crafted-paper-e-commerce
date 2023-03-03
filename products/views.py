@@ -105,7 +105,8 @@ def add_product(request):
         if form.is_valid():
             product = form.save()
             messages.success(request, 'Successfully added product!')
-            return redirect(reverse('products:add_product'))
+            return redirect(reverse('products:product_detail',
+                            args=[product.id, product.slug]))
         else:
             messages.error(request,
                            'Failed to add product. \
@@ -129,8 +130,7 @@ def edit_product(request, product_id, slug):
         product_id: The unique identifier for the product.
         slug (str): The human friendly identifier for the product.
     Returns:
-        HttpResponse: The rendered HTML template for the edit product  page.
-
+        HttpResponse: The rendered HTML template for the edit product page.
     """
 
     product = get_object_or_404(Product,
@@ -157,3 +157,21 @@ def edit_product(request, product_id, slug):
     }
 
     return render(request, template, context)
+
+
+def delete_product(request, product_id, slug):
+    """
+    Delete a product from the store
+    Parameters:
+        request (HttpRequest): the HTTP request made to the view.
+        product_id: The unique identifier for the product.
+        slug (str): The human friendly identifier for the product.
+    Returns:
+        HttpResponse: The rendered HTML template for the product list page.
+    """
+
+    product = get_object_or_404(Product,
+                                pk=product_id, slug=slug)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products:product_list'))
