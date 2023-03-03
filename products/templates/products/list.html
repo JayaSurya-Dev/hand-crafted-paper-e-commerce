@@ -60,9 +60,15 @@
                     {% for product in products %}
                         <main class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <article class="card h-100 border-0">
+                                {% if product.image %}
                                 <a href="{{ product.get_absolute_url }}">
-                                    <img class="card-img-top img-fluid" src="{% if product.image %} {{ product.image.url }}{% else %} {{ MEDIA_URL }}noimage.png {% endif %}" alt="{{ product.name }}">
+                                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
                                 </a>
+                                {% else %}
+                                <a href="{{ product.get_absolute_url }}">
+                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                </a>
+                                {% endif %}
                                 <div class="card-body pb-0">
                                     <p class="mb-0">
                                     <a class="text-link" href="{{ product.get_absolute_url }}">

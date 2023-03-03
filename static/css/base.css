@@ -208,6 +208,10 @@ input[name='q']::placeholder {
     color: #121022;
 }
 
+input[name='q']:focus {
+    background-color: white !important;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {

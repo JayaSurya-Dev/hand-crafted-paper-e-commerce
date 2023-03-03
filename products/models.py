@@ -35,11 +35,6 @@ class Category(models.Model):
         """ Get the category friendly name """
         return self.friendly_name
 
-    def get_absolute_url(self):
-        """ Get the product category absolute url """
-        return reverse('products:product_list_by_category',
-                       args=[self.slug])
-
 
 class Product(models.Model):
     """
@@ -57,7 +52,8 @@ class Product(models.Model):
     rating = models.DecimalField(
         max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
-    image = models.ImageField(null=True, blank=True)
+    image = models.ImageField(upload_to='product_images/',
+                              null=True, blank=True)
     available = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
