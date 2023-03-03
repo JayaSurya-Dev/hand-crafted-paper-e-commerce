@@ -93,7 +93,13 @@ def product_detail(request, product_id, slug):
 
 
 def add_product(request):
-    """ Add a product to the store """
+    """
+    Add a product to the store
+    Parameters:
+        request (HttpRequest): the HTTP request made to the view.
+    Returns:
+        HttpResponse: The rendered HTML template for the add product page.
+    """
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
@@ -110,6 +116,44 @@ def add_product(request):
     template = 'products/add_product.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_product(request, product_id, slug):
+    """
+    Edit a product in the store
+    Parameters:
+        request (HttpRequest): the HTTP request made to the view.
+        product_id: The unique identifier for the product.
+        slug (str): The human friendly identifier for the product.
+    Returns:
+        HttpResponse: The rendered HTML template for the edit product  page.
+
+    """
+
+    product = get_object_or_404(Product,
+                                pk=product_id, slug=slug)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('products:product_detail',
+                            args=[product.id, product.slug]))
+        else:
+            messages.error(
+                request, 'Failed to update product. \
+                    Please ensure the form is valid.')
+    else:
+        form = ProductForm(instance=product)
+        messages.info(request, f'You are editing {product.name}')
+
+    template = 'products/edit_product.html'
+    context = {
+        'form': form,
+        'product': product,
     }
 
     return render(request, template, context)
