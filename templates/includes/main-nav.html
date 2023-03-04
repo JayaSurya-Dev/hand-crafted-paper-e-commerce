@@ -50,15 +50,10 @@
                 <a href="{% url 'products:product_list' %}?category=birthday_cake_topper,anniversary_cake_topper,wedding_cake_topper" class="dropdown-item">All Cake Toppers</a>
             </div>
         </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#blog" id="blog-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'blog:post_list' %}" id="blog-link" aria-haspopup="true" aria-expanded="false">
                 Blog
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="blog-link">
-                <a href="#" class="dropdown-item">Featured Articles</a>
-                <a href="#" class="dropdown-item">Latest Articles</a>
-                <a href="#" class="dropdown-item">All Articles</a>
-            </div>
         </li>
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="specials-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

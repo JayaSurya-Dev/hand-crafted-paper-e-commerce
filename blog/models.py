@@ -47,7 +47,7 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         """ Get the post detail absolute url """
-        return reverse("blog:post-detail", args=[self.slug])
+        return reverse("blog:post_detail", args=[self.slug])
 
 
 class Comment(models.Model):

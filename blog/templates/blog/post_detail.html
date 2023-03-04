@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+    {% if category %} | {{ category.friendly_name }} {% else %} | Blog {% endif %}
+{% endblock extra_title %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container-sm">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">
+                {% if category %} {{ category.friendly_name }} {% else %} Blog {% endif %}
+            </h2>
+            {% for cc in current_categories %}
+            <a class="category-badge text-decoration-none" href="{% url 'products:product_list' %}?category={{ cc.name }}">
+                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ cc.friendly_name }}</span>
+            </a>
+            {% endfor %}
+            <hr class="w-50 mb-4">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card mb-3">
+                {% if post.featured_image %}
+                    <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
+                    {% else %}
+                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ post.title }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title text-center">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.content | safe }}</p>
+                    <p class="card-text"><small class="text-muted">Last updated {{ post.updated_on | timesince }} ago </small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="product-container col-10 offset-1">
+        <div class="row mt-1 mb-2">
+            <div class="col-12 col-md-6 order-md-first">
+                <p class="text-black75 mt-3 text-center text-md-left">
+                    <span class="#"><a href="{% url 'blog:post_list' %}" class="text-black"><i class="fas fa-hand-point-left text-brown"></i> Blog Home</a>
+                </p>
+            </div>
+        </div>            
+    </div>
+    <div class="row">
+        <div class="col-md-8 card mb-4 mt-4 card-comment">
+          <p class="thin h4 mt-2">
+            <strong class="second-color">Comments:</strong>
+            <small>{{ comments.count }}</small>
+          </p>
+          <div class="card-body">
+              {% for comment in comments %}
+              <div class="comments shadow-sm p-3 mb-3 bg-white rounded" style="padding: 10px;">
+              <p class="font-weight-bold">
+                {{ comment.user }} on <span class=" text-muted font-weight-normal">
+                  {{ comment.created_on|date:"D d M Y" }}
+                </span> wrote:
+              </p>
+              {{ comment.body | safe }}
+            </div> 
+            {% empty %} 
+            <P>There is no comments</P> 
+            {% endfor %} </div>
+        </div>
+        <div class="col-md-4 card mb-4 mt-3 card-comment">
+          <div class="card-body">
+              {% if user.is_authenticated %} 
+            <!-- Comment Form -->
+            <p class="thin h4">
+                <strong>Leave a comment:</strong>
+            </p>
+            <p>Posting as: {{ user.username }}</p>
+            <form action="{% url 'blog:post_detail' slug=post.slug %}" method="POST">
+                {% csrf_token %} 
+                {{ form | crispy | safe }}
+                <button type="submit" class="btn btn-black">Add Comment</button>
+            </form>
+            <!-- ./ comment form -->         
+              {% else %} <p>
+              <strong>Would you like to leave a comment?.</strong> Already have an account? Then please <a href="{% url 'account_login' %}">
+                <strong class="text-darker-purple h5">Sign In</strong>
+              </a>
+            </p>
+            <p> If you don't have an account please <a href="{% url 'account_signup' %}">
+                <strong class="text-darker-purple h5">Sign Up</strong>
+              </a> to create one. </p>
+              {% endif %}
+          </div>
+        </div>
+      </div>  
+</div>
+{% endblock content %}

@@ -204,6 +204,11 @@ input[name='q']:focus {
     background-color: white !important;
 }
 
+.card-comment {
+    border: none;
+    background-color: transparent;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
