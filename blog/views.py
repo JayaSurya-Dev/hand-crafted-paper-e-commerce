@@ -22,6 +22,7 @@ def post_list(request):
     posts = Post.objects.filter(status="published")
     template = ["blog/post_list.html"]
     context = {
+        "page_title": "Blog",
         "posts": posts,
     }
 
@@ -61,6 +62,7 @@ def post_detail(request, slug):
 
     template = "blog/post_detail.html"
     context = {
+        "page_title": "Blog Article",
         "comments": comments,
         "form": form,
         "post": post,

@@ -1,0 +1,37 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block extra_title %} | {{ page_title }} {% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-8 offset-md-2 mt-4">
+        <h1 class="thin text-center mb-4 second-color">{{ page_title }}</h1>
+        <article>
+            <p>Welcome to Hand-Crafted Designs, your one-stop-shop for beautiful, handcrafted paper flowers! I am a passionate hand crafted artist who specialize in creating unique and personalized floral shadow boxes that are perfect for any occasion.</p>
+
+            <p>My journey began several years ago, when I first discovered the joy of working with paper as a creative medium. I quickly fell in love with the versatility and beauty of paper, and began experimenting with different techniques and styles for making my own paper flowers.</p>
+            
+            <p>Over time, I developed my skills and honed my craft, and began to receive requests from friends and family members to create paper flower arrangements for their special events. As word spread about my unique and personalized creations, I decided to turn my passion into a business, and Hand-Crafted Designs was born.</p>
+            
+            <p>Today, I am  proud to offer a wide range of paper flower arrangements, from classic roses and lilies to more exotic orchids and peonies. Each flower is carefully handcrafted using high-quality materials, and can be customized to match any color scheme or design preference.</p>
+            
+            <p>Whether you are looking for a beautiful centerpiece for your wedding, a unique gift for a loved one, or simply a stunning piece of home decor, we are here to help. Hand-Crafted Designs is dedicated to providing exceptional customer service, and I am committed to ensuring that each and every customer is completely satisfied with their purchase.</p>
+            
+            <p>Thank you for choosing Hand-Crafted Designs, and we look forward to helping you create something beautiful!</p>
+        </article>
+    </div>
+  </div>
+</div>
+
+{% endblock content%}
