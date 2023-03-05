@@ -84,10 +84,14 @@ def product_detail(request, product_id, slug):
                                 pk=product_id,
                                 slug=slug,
                                 available=True)
+    wished = False
+    if product.wishlist.filter(id=request.user.id).exists():
+        wished = True
 
     template = ["products/detail.html"]
     context = {
         'product': product,
+        'wished': wished,
     }
 
     return render(request, template, context)

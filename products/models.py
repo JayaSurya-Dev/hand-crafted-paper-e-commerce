@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from django.urls import reverse
 
 
@@ -57,6 +58,8 @@ class Product(models.Model):
     available = models.BooleanField(default=True)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
+    wishlist = models.ManyToManyField(User, related_name='wishlist',
+                                      blank=True, default=None)
 
     class Meta:
         """

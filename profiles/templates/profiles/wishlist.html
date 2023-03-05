@@ -1,0 +1,127 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+    {% if category %} | {{ category.friendly_name }} {% else %} | Wishlist {% endif %}
+{% endblock extra_title %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col text-center mt-3">
+                <h2 class="logo-font">
+                    {% if category %} {{ category.friendly_name }} {% else %} Product Wishlist {% endif %}
+                    {% for cc in current_categories %}
+                    <a class="category-badge text-decoration-none" href="{% url 'products:product_list' %}?category={{ cc.name }}">
+                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ cc.friendly_name }}</span>
+                    </a>
+                    {% endfor %}
+                    <hr class="w-50 mb-1">
+                </div>
+            </div>
+            <div class="row">
+                <div class="product-container col-10 offset-1">
+                    <div class="row mt-1 mb-2">
+                        <div class="col-12 col-md-6 order-md-first">
+                            <p class="text-black75 mt-3 text-center text-md-left">
+                                {% if search_term or current_categories or current_sorting != 'None_None' %}
+                                    <span class="small"><a href="{% url 'products:product_list' %}" class="text-black"><i class="fas fa-hand-point-left text-brown"></i> Products Home</a> | </span>
+                                {% endif %}
+                                {{ new_wish|length }} Saved Product{{ new_wish|pluralize }}{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        {% for product in new_wish %}
+                            <main class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                                <article class="card h-100 border-0">
+                                    {% if product.image %}
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    </a>
+                                    {% else %}
+                                    <a href="{{ product.get_absolute_url }}">
+                                        <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                                    </a>
+                                    {% endif %}
+                                    <div class="card-body pb-0">
+                                        <p class="mb-0">
+                                        <a class="text-link" href="{{ product.get_absolute_url }}">
+                                            {{ product.name }}
+                                        </a>
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-white pt-0 border-0 text-left">
+                                        <div class="row">
+                                            <div class="col">
+                                                <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
+                                                {% if product.category %}
+                                                <p class="small mt-1 mb-0">
+                                                    <a class="text-muted" href="{% url 'products:product_list' %}?category={{ product.category.name }}">
+                                                        <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                                    </a>
+                                                </p>
+                                                {% endif %}
+                                                {% if product.rating %}
+                                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                                {% else %}
+                                                    <small class="text-muted">No Rating</small>
+                                                {% endif %}
+                                                <small class="ml-3">                     <a class="text-info" href="{% url 'products:product_detail' product.id product.slug %}">Buy</a> |
+                                                <a class="text-danger" href="{% url 'profiles:wish_add' product.id product.slug %}">Remove</a>
+
+                                                </small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </article>
+                            </main>
+                            {% if forloop.counter|divisibleby:1 %}
+                                <div class="col-12 d-sm-none mb-5">
+                                    <hr>
+                                </div>
+                            {% endif %}                        
+                            {% if forloop.counter|divisibleby:2 %}
+                                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                                    <hr>
+                                </div>
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:3 %}
+                                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                                    <hr>
+                                </div>
+                            {% endif %}
+                            {% if forloop.counter|divisibleby:4 %}
+                                <div class="col-12 d-none d-xl-block mb-5">
+                                    <hr>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>            
+                </div>
+            </div>
+        </div>
+        <div class="btt-button shadow-sm rounded-0 border border-brown">
+            <a href="#0,0" class="btt-link d-flex h-100 text-brown">
+                <i class="fas fa-arrow-up text-brown mx-auto my-auto"></i>
+            </a>	
+        </div>
+    {% endblock content %}
+    
+    {% block postloadjs %}
+        {{ block.super }}
+        <script>
+            $('.btt-link').click(function(e) {
+                window.scrollTo(0,0)
+            })
+        </script>
+    {% endblock postloadjs %}

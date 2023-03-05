@@ -1,4 +1,6 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import (
+    render, redirect,
+    reverse, get_object_or_404)
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -6,6 +8,29 @@ from .models import UserProfile
 from .forms import UserProfileForm
 
 from checkout.models import Order
+from products.models import Product
+
+
+@login_required
+def wish_list(request):
+    new_wish = Product.objects.filter(wishlist=request.user)
+    template = 'profiles/wishlist.html'
+    context = {
+        'new_wish': new_wish,
+    }
+    return render(request, template, context)
+
+
+@login_required
+def wish_add(request, product_id, slug):
+    product = get_object_or_404(Product, id=product_id, slug=slug)
+    if product.wishlist.filter(id=request.user.id).exists():
+        product.wishlist.remove(request.user)
+    else:
+        product.wishlist.add(request.user)
+
+    return redirect(reverse('products:product_detail',
+                            args=[product.id, product.slug]))
 
 
 @login_required
