@@ -1,0 +1,28 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block extra_title %} | {{ page_title }} {% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-8 offset-md-2 mt-4">
+        <h1 class="thin text-center mb-4 second-color">{{ page_title }}</h1>
+        <div class="container mt-5">
+            <h1>{{ title }}</h1>
+            <p>{{ message }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content%}

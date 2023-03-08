@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'checkout.apps.CheckoutConfig',
     'profiles.apps.ProfilesConfig',
     'blog.apps.BlogConfig',
+    'newsletter.apps.NewsletterConfig',
 
     # 3rd party
     'allauth',
@@ -190,6 +191,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_HOST_USER = 'admin@handcrafteddesigns.com'
 DEFAULT_FROM_EMAIL = 'handcrafteddesigns@store.com'
 
+
+MAILCHIMP_API_KEY = os.environ.get('MAILCHIMP_API_KEY', '')
+MAILCHIMP_REGION = os.environ.get('MAILCHIMP_REGION', '')
+MAILCHIMP_MARKETING_AUDIENCE_ID = os.environ.get(
+    'MAILCHIMP_MARKETING_AUDIENCE_ID', '')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

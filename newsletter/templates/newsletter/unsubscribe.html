@@ -1,0 +1,33 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% crispy form form.helper %}
+
+{% block extra_title %} | {{ page_title }} {% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-6 offset-md-3 mt-4">
+        <h1 class="thin text-center mb-4 second-color">{{ page_title }}</h1>
+            <h1>Unsubscribe</h1>
+            <p>Enter your email address to unsubscribe from our mailing list.</p>
+            <form method="POST">
+                {% csrf_token %}
+                {% crispy form %}
+                <button type="submit" class="btn btn-danger">Unsubscribe</button>
+            </form>
+            <p class="mt-2"><a href="{% url "newsletter:subscribe" %}">Subscribe form</a></p>
+    </div>
+  </div>
+</div>
+
+{% endblock content%}
