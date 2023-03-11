@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -10,7 +11,8 @@ from .forms import ProductForm
 
 def product_list(request):
     """
-    Display a list of all products, including sorting and search queries
+    Display a list of all products, including sorting and search queries,
+    paginated.
     Parameters:
         request (HttpRequest): the HTTP request object
     Returns:
@@ -58,12 +60,20 @@ def product_list(request):
 
     current_sorting = f'{sort}_{direction}'
 
+    paginator = Paginator(products, 12)
+    page = request.GET.get("page")
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+
     template = ["products/list.html"]
     context = {
         'products': products,
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        "page": page,
 
     }
 

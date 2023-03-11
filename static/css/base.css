@@ -209,6 +209,20 @@ input[name='q']:focus {
     background-color: transparent;
 }
 
+.page-link {
+    color: #121022;
+}
+
+.page-link:hover {
+    color: #121022;
+    background-color: #d0b360;
+}
+
+.page-active {
+    background-color: #544a92 !important;
+    border-color: #544a92 !important;
+}
+
 /* ------------------------------- bootstrap toasts */
 
 .message-container {
