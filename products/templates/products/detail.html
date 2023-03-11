@@ -30,7 +30,7 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}
+                    <p class="mb-2">{{ product.name }}
                         {% if request.user.is_authenticated %}                  
                           <span class="ml-3"><a href="{% url 'profiles:wish_add' product.id product.slug %}" class="btn btn-sm btn-outline-black">
                             {% if wished %}
@@ -52,8 +52,8 @@
                         </a>
                     </p>
                     {% endif %}
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                    {% if product.get_rating %}
+                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.get_rating }} / 5</small>
                     {% else %}
                         <small class="text-muted">No Rating</small>
                     {% endif %}
@@ -121,6 +121,54 @@
                 </div>
             </div>
         </div>
+    
+        <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 offset-lg-2 card mb-4 mt-4 card-comment">
+            <p class="thin h4 mt-2">
+                <strong class="second-color">Reviews:</strong>
+                <small>{{ product.reviews.count }}</small>
+            </p>
+            <div class="card-body">
+                {% for review in product.reviews.all %}
+                <div class="shadow-sm p-3 mb-3 bg-white rounded" style="padding: 10px;">
+                <p class="font-weight-bold">
+                    {{ review.user }} on <span class=" text-muted font-weight-normal">
+                    {{ review.created_on|date:"D d M Y" }}
+                    <span class="font-weight-bold">Stars:</span> {{ review.stars }}
+                    </span>
+                </p>
+                {{ review.content | safe }}
+                </div> 
+                {% empty %} 
+                <P>There is no Reviews yet</P> 
+                {% endfor %} </div>
+            </div>
+            <div class="col-md-4 card mb-4 mt-3 card-comment">
+            <div class="card-body">
+                {% if user.is_authenticated %} 
+                <!-- Review Form -->
+                <p class="thin h4">
+                    <strong>Leave a Review:</strong>
+                </p>
+                <p>Review as: {{ user.username }}</p>
+                <form action="." method="POST">
+                    {% csrf_token %} 
+                    {{ form | crispy | safe }}
+                    <button type="submit" class="btn btn-black">Add Review</button>
+                </form>
+                <!-- ./ review form -->         
+                {% else %} <p>
+                <strong>Would you like to leave a review?.</strong> Already have an account? Then please <a href="{% url 'account_login' %}">
+                    <strong class="text-darker-purple h5">Sign In</strong>
+                </a>
+                </p>
+                <p> If you don't have an account please <a href="{% url 'account_signup' %}">
+                    <strong class="text-darker-purple h5">Sign Up</strong>
+                </a> to create one. </p>
+                {% endif %}
+            </div>
+            </div>
+        </div>  
     </div>
 {% endblock content %}
 

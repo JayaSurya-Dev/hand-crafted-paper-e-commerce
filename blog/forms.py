@@ -8,7 +8,7 @@ class CommentForm(forms.ModelForm):
     """
     class Meta:
         model = Comment
-        fields = ['body']
+        fields = ('body',)
 
     def __init__(self, *args, **kwargs):
         """Remove body label and add placeholder text"""

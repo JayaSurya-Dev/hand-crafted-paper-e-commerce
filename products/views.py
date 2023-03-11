@@ -5,8 +5,8 @@ from django.core.paginator import Paginator, PageNotAnInteger
 from django.db.models import Q
 from django.db.models.functions import Lower
 
-from .models import Category, Product
-from .forms import ProductForm
+from .models import Category, Product, ProductReview
+from .forms import ProductForm, ProductReviewForm
 
 
 def product_list(request):
@@ -98,10 +98,27 @@ def product_detail(request, product_id, slug):
     if product.wishlist.filter(id=request.user.id).exists():
         wished = True
 
+    # Add review
+    review = None
+    if request.method == 'POST':
+        form = ProductReviewForm(request.POST)
+        if form.is_valid():
+            review = form.save(commit=False)
+            review.product = product
+            review.user = request.user
+            review.save()
+            messages.success(request, "Thank you for your review.")
+
+            return redirect(reverse('products:product_detail',
+                            args=[product.id, product.slug]))
+    else:
+        form = ProductReviewForm()
+
     template = ["products/detail.html"]
     context = {
         'product': product,
         'wished': wished,
+        'form': form,
     }
 
     return render(request, template, context)

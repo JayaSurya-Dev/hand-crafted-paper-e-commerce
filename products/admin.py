@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Category, Product
+from .models import Category, Product, ProductReview
 from django.contrib.auth.decorators import login_required
 
 admin.site.login = login_required(admin.site.login)
@@ -32,7 +32,6 @@ class ProductAdmin(SummernoteModelAdmin):
         'slug',
         'category',
         'price',
-        'rating',
         'available',
         'created_on',
         'updated_on',
@@ -50,3 +49,6 @@ class ProductAdmin(SummernoteModelAdmin):
         'available',
     )
     prepopulated_fields = {'slug': ('name',)}
+
+
+admin.site.register(ProductReview)

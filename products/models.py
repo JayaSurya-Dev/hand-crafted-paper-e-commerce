@@ -3,6 +3,15 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 
 
+RATING = [
+    (1, "1"),
+    (2, "2"),
+    (3, "3"),
+    (4, "4"),
+    (5, "5"),
+]
+
+
 class Category(models.Model):
     """
     Database model for Category
@@ -50,8 +59,6 @@ class Product(models.Model):
     description = models.TextField(blank=True)
     has_sizes = models.BooleanField(default=False, null=True, blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(upload_to='product_images/',
                               null=True, blank=True)
@@ -82,3 +89,29 @@ class Product(models.Model):
         """ Get the product detail absolute url """
         return reverse('products:product_detail',
                        args=[self.id, self.slug])
+
+    def get_rating(self):
+        """ Get product average rating """
+        total = sum(int(review['stars']) for review in self.reviews.values())
+        if self.reviews.count() > 0:
+            return total / self.reviews.count()
+        else:
+            return 0
+
+
+class ProductReview(models.Model):
+    """
+    Database Model for Product Reviews
+    """
+    product = models.ForeignKey(Product,
+                                related_name="reviews",
+                                on_delete=models.CASCADE)
+    user = models.ForeignKey(User,
+                             related_name="reviews",
+                             on_delete=models.CASCADE)
+    content = models.TextField(blank=True, null=True)
+    stars = models.DecimalField(choices=RATING,
+                                max_digits=6, decimal_places=2,
+                                default=3,
+                                null=True, blank=True)
+    created_on = models.DateTimeField(auto_now_add=True)
