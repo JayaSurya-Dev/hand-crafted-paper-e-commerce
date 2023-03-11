@@ -6,6 +6,7 @@ from django.shortcuts import (
     )
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger
 
 from .models import Post, Comment
 from .forms import CommentForm
@@ -20,10 +21,18 @@ def post_list(request):
         HttpResponse: the HTTP response object with the rendered template
     """
     posts = Post.objects.filter(status="published")
+    paginator = Paginator(posts, 8)
+    page = request.GET.get("page")
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        posts = paginator.page(1)
+
     template = ["blog/post_list.html"]
     context = {
         "page_title": "Blog",
         "posts": posts,
+        "page": page,
     }
 
     return render(request, template, context)
