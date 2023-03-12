@@ -64,7 +64,12 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left font-weight-bold">Edit|Delete Links
+                                            {% if request.user.is_superuser %}
+                                            <small class="ml-3">
+                                                <a href="{% url 'blog:post_update' slug=post.slug %}">Edit</a> | 
+                                                <a class="text-danger" href="{% url 'blog:post_delete' slug=post.slug %}">Delete</a>
+                                            </small>
+                                            {% endif %}
                                         </div>
                                     </div>
                                 </div>
@@ -106,6 +111,7 @@
             <i class="fas fa-arrow-up text-brown mx-auto my-auto"></i>
         </a>	
     </div>
+
 {% endblock content %}
 
 {% block postloadjs %}

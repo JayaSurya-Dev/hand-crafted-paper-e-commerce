@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}
+    {% if category %} | {{ category.friendly_name }} {% else %} | {{ page_title }} {% endif %}
+{% endblock extra_title %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-6 offset-md-3 text-center">
+            <hr>
+            <h2 class="logo-font mb-4">{{ form_type }}</h2>
+            <hr>
+        </div>
+    </div>
+  <div class="row">
+    <div class="col-12 col-md-6 offset-md-3">
+      <div class="card">
+        <div class="card-body shadow-lg p-3 bg-white rounded">
+          <h4>Are you sure you want to delete "{{ post.title }}"?</h4>
+          <p>This action cannot be undone.</p>
+          {% if user.is_authenticated %} {% if user.is_staff %}
+          <a type="button" class="btn btn-outline-info btn-lg btn-block mb-2" href="{% url 'blog:post_list' %}">Cancel</a>
+          {% endif %}
+          <form method="POST" action="." enctype="multipart/form-data">
+            {% csrf_token %} <button class="btn btn-outline-danger btn-lg btn-block" type="submit">Yes, {{ form_type }}</button>
+          </form>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div> {% endblock content %}

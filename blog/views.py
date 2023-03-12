@@ -160,7 +160,8 @@ def post_update(request, slug):
             request.FILES or None,
             instance=post)
 
-    if (request.user != post.author) and not request.user.is_staff:
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only authorized staff can do that.')
         return redirect(reverse("home:index"))
 
     if request.method == "POST":
@@ -172,12 +173,53 @@ def post_update(request, slug):
                 "slug": form.instance.slug
             }))
         else:
-            form = PostForm(instance=post)
+            messages.error(request,
+                           'Failed to update article. \
+                            Please ensure the form is valid.')
+    else:
+        form = PostForm(instance=post)
+        messages.info(request, f'You are editing {post.title}')
 
     template = "blog/post_create.html"
     context = {
         "page_title": "Update Article",
         "form_type": "Update",
+        "form": form,
+    }
+    return render(request, template, context)
+
+
+@login_required
+def post_delete(request, slug):
+    """
+    Delete an article with the given slug.
+    Accepts a POST request with a slug parameter and deletes the post
+    with the given slug from the database.
+    On GET request, render a confirmation form.
+    Parameters:
+        request: the request object
+        slug: the slug of the post to delete
+    Returns:
+        On a POST request:
+            A redirect to the post list page
+        On a GET request:
+            A rendered form template to confirm the post deletion
+    """
+    post = get_object_or_404(Post, slug=slug)
+
+    if request.method == "POST":
+        form = PostForm(request.POST, instance=post)
+        post.delete()
+        messages.success(
+            request, "Article deleted.")
+        return redirect(reverse("blog:post_list"))
+    else:
+        form = PostForm(instance=post)
+
+    template = "blog/delete_modal.html"
+    context = {
+        "form_type": "Delete",
+        "post": post,
         "form": form,
     }
     return render(request, template, context)
