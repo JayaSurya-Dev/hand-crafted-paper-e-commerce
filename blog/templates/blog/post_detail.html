@@ -21,6 +21,7 @@
             <h2 class="logo-font">
                 {% if category %} {{ category.friendly_name }} {% else %} {{ page_title}} {% endif %}
             </h2>
+            <h3>{{ post.title }}</h3>
             {% for cc in current_categories %}
             <a class="category-badge text-decoration-none" href="{% url 'products:product_list' %}?category={{ cc.name }}">
                 <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ cc.friendly_name }}</span>

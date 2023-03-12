@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-12 col-md-6 offset-md-3 text-center">
             <hr>
-            <h2 class="logo-font mb-4">{{ form_type }} Article</h2>
+            <h2 class="logo-font mb-4">{{ form_type }} Product</h2>
             <hr>
         </div>
     </div>
@@ -27,11 +27,11 @@
     <div class="col-12 col-md-6 offset-md-3">
       <div class="card">
         <div class="card-body shadow-lg p-3 bg-white rounded">
-          <h4>Are you sure you want to delete "{{ post.title }}"?</h4>
+          <h4>Are you sure you want to delete "{{ product.name }}"?</h4>
           <p>This action cannot be undone.</p>
-          {% if user.is_authenticated %} {% if user.is_staff %}
-          <a type="button" class="btn btn-outline-info btn-lg btn-block mb-2" href="{% url 'blog:post_list' %}">Cancel</a>
-          {% endif %}
+          {% if user.is_superuser %}
+          <a type="button" class="btn btn-outline-info btn-lg btn-block mb-2" href="{% url 'products:product_list' %}">Cancel</a>
+
           <form method="POST" action="." enctype="multipart/form-data">
             {% csrf_token %} <button class="btn btn-outline-danger btn-lg btn-block" type="submit">Yes, {{ form_type }}</button>
           </form>

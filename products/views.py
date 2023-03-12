@@ -213,10 +213,23 @@ def delete_product(request, product_id, slug):
     """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
-        return redirect(reverse('home:index'))
+        return redirect(reverse('products:product_list'))
 
     product = get_object_or_404(Product,
                                 pk=product_id, slug=slug)
-    product.delete()
-    messages.success(request, 'Product deleted!')
-    return redirect(reverse('products:product_list'))
+
+    if request.method == "POST":
+        form = ProductForm(request.POST, instance=product)
+        product.delete()
+        messages.success(request, 'Product deleted!')
+        return redirect(reverse('products:product_list'))
+    else:
+        form = ProductForm(instance=product)
+
+    template = "products/delete_modal.html"
+    context = {
+        "form_type": "Delete",
+        "product": product,
+        "form": form,
+    }
+    return render(request, template, context)

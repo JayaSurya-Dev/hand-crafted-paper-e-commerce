@@ -51,4 +51,15 @@ class ProductAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('name',)}
 
 
-admin.site.register(ProductReview)
+@admin.register(ProductReview)
+class ProductReviewAdmin(admin.ModelAdmin):
+
+    """
+    Product Review model in admin panel
+    """
+    list_display = (
+        'product',
+        'user',
+        'content',
+        'stars',
+    )

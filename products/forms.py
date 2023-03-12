@@ -33,7 +33,7 @@ class ProductReviewForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """Remove content label and add placeholder text"""
-        super(ProductReviewForm, self).__init__(*args, **kwargs)
+        super().__init__(*args, **kwargs)
         self.fields['content'].label = ''
         self.fields['content'].widget.attrs['placeholder'] = 'Add review \
 here...'

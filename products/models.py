@@ -115,3 +115,8 @@ class ProductReview(models.Model):
                                 default=3,
                                 null=True, blank=True)
     created_on = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        """ Returns a string representation of Product Review """
+        return f'{self.user.username} rated {self.stars} stars to\
+            {self.product.name}'
