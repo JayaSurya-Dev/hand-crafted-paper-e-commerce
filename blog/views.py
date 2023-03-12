@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, PageNotAnInteger
 
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import PostForm, CommentForm
 
 
 def post_list(request):
@@ -75,5 +75,58 @@ def post_detail(request, slug):
         "comments": comments,
         "form": form,
         "post": post,
+    }
+    return render(request, template, context)
+
+
+@login_required
+def post_create(request):
+    """
+    View function for creating a new blog article.
+
+    If the user is a staff member, a new PostForm is created with
+    the POST and FILES data from the request.
+    If the request method is POST and the form is valid, a new Post
+    object is created with the form data,
+    and the author field is set to the current user. The new post is
+    saved to the database,
+    and a success message is added to the request's messages framework.
+    The user is then redirected to the newly created post's detail page.
+    If the form is not valid, the user is shown the form again with
+    any validation errors displayed.
+
+    Decorators:
+    - @login_required: Only authenticated users can access this view.
+
+    Parameters:
+        request (HttpRequest): the HTTP request object
+    Returns:
+        HttpResponse: the HTTP response object with the rendered template
+    """
+
+    if request.user.is_staff:
+        form = PostForm(
+            request.POST or None,
+            request.FILES or None)
+
+    if request.method == "POST":
+        if form.is_valid():
+            post = form.save(commit=False)
+            form.instance.author = request.user
+            post.save()
+            messages.success(
+                request, "Article has been created successfully.")
+
+            return redirect(reverse("blog:post_detail", kwargs={
+                "slug": form.instance.slug
+            }))
+        else:
+            form = PostForm()
+
+    template = "blog/post_create.html"
+    context = {
+        "page_title": "Add Article",
+        "form_type": "Add",
+        "form": form,
     }
     return render(request, template, context)
