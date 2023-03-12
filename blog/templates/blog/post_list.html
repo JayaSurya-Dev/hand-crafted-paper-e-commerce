@@ -65,10 +65,12 @@
                                     <div class="row">
                                         <div class="col">
                                             {% if request.user.is_superuser %}
-                                            <small class="ml-3">
+                                            <p class="ml-3 text-center">
+                                            <small>
                                                 <a href="{% url 'blog:post_update' slug=post.slug %}">Edit</a> | 
                                                 <a class="text-danger" href="{% url 'blog:post_delete' slug=post.slug %}">Delete</a>
                                             </small>
+                                        </p>
                                             {% endif %}
                                         </div>
                                     </div>

@@ -25,7 +25,7 @@ class ProductAdmin(SummernoteModelAdmin):
     """
     Product model in admin panel
     """
-    summernote_fields = '__all__'
+    summernote_fields = ('description',)
 
     list_display = (
         'name',

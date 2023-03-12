@@ -14,6 +14,7 @@ class PostAdmin(SummernoteModelAdmin):
     summernote_fields = ('content',)
 
     list_display = (
+        'id',
         'title',
         'status',
         'created_on',
@@ -39,6 +40,7 @@ class CommentAdmin(SummernoteModelAdmin):
     summernote_fields = ('body',)
 
     list_display = [
+        'id',
         'user',
         'email',
         'post',

@@ -223,3 +223,18 @@ def post_delete(request, slug):
         "form": form,
     }
     return render(request, template, context)
+
+
+@login_required
+def delete_comment(request, comment_id, slug):
+    comment = get_object_or_404(Comment, id=comment_id)
+
+    if request.user == comment.user or request.user.is_superuser:
+        comment.delete()
+        messages.success(request,
+                         "Comment deleted successfully!")
+    else:
+        messages.error(request,
+                       "You are not authorized to delete this comment.")
+
+    return redirect('blog:post_detail', slug=slug)

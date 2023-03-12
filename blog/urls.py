@@ -11,4 +11,6 @@ urlpatterns = [
     path('article/delete/<slug:slug>/', views.post_delete, name='post_delete'),
     path('article/comment/<slug:slug>/',
          views.post_detail, name='post_comment'),
+    path('article/delete/comment/<int:comment_id>/<slug:slug>/',
+         views.delete_comment, name='delete_comment'),
 ]

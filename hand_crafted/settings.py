@@ -60,27 +60,6 @@ INSTALLED_APPS = [
 
 SUMMERNOTE_THEME = 'bs4'
 
-SUMMERNOTE_CONFIG = {
-
-    'summernote': {
-        'airMode': False,
-        # Change editor size
-        'width': '100%',
-        'height': '380',
-    },
-
-    # Require users to be authenticated for uploading attachments.
-    'attachment_require_authentication': True,
-    # You can completely disable the attachment feature.
-    'disable_attachment': False,
-    # Set to `True` to return attachment paths in absolute URIs.
-    'attachment_absolute_uri': False,
-    # Lazy initialization
-    # If you want to initialize summernote at the bottom of page, set this as True
-    # and call `initSummernote()` on your page.
-    'lazy': True,
-}
-
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
@@ -226,33 +205,17 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 SUMMERNOTE_CONFIG = {
 
-    # Use this when you're already using Bootstrap/jQuery based themes.
-    'iframe': False,
+    'iframe': True,
 
-    # You can put custom Summernote settings
     'summernote': {
         'airMode': False,
-
-        # Change editor size
         'width': '100%',
         'height': '480',
-
-        # Use proper language setting automatically (default)
         'lang': None,
-
     },
 
-    # Require users to be authenticated for uploading attachments.
     'attachment_require_authentication': True,
-
-    # You can completely disable the attachment feature.
     'disable_attachment': False,
-
-    # Set to `True` to return attachment paths in absolute URIs.
     'attachment_absolute_uri': False,
-
-    # Lazy initialization
-    # If you want to initialize summernote at the bottom of page, set this as True
-    # and call `initSummernote()` on your page.
     'lazy': True,
 }
