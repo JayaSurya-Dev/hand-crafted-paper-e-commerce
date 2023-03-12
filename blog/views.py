@@ -130,3 +130,54 @@ def post_create(request):
         "form": form,
     }
     return render(request, template, context)
+
+
+@login_required
+def post_update(request, slug):
+    """
+    Update an existing blog article.
+    This view handles POST requests to update a blog article with a given
+    slug. It first retrieves the post to be updated from the database and
+    then renders a
+    form for the user to edit the post. The form used depends on whether the
+    user making the request is an administrator. If the request method is POST,
+    the form is validated and, if valid, the post is updated and a success
+    message is displayed to the user. If the form is invalid or the request
+    method is not POST, the form is re-rendered with the existing post data.
+    Parameters:
+        request: an HTTP POST request to update the post.
+        slug: a string representing the unique slug for the post.
+    Returns:
+        An HTTP response containing the rendered form for updating the post or
+        a redirect to the updated post detail page.
+    """
+
+    post = get_object_or_404(Post, slug=slug)
+
+    if request.user.is_staff:
+        form = PostForm(
+            request.POST or None,
+            request.FILES or None,
+            instance=post)
+
+    if (request.user != post.author) and not request.user.is_staff:
+        return redirect(reverse("home:index"))
+
+    if request.method == "POST":
+        if form.is_valid():
+            form.save()
+            messages.success(
+                request, "Your article has been successfully updated.")
+            return redirect(reverse("blog:post_detail", kwargs={
+                "slug": form.instance.slug
+            }))
+        else:
+            form = PostForm(instance=post)
+
+    template = "blog/post_create.html"
+    context = {
+        "page_title": "Update Article",
+        "form_type": "Update",
+        "form": form,
+    }
+    return render(request, template, context)
