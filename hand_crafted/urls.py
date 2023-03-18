@@ -34,3 +34,9 @@ urlpatterns = [
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
+
+
+handler403 = 'hand_crafted.views.handler403'
+handler404 = 'hand_crafted.views.handler404'
+handler405 = 'hand_crafted.views.handler405'
+handler500 = 'hand_crafted.views.handler500'
