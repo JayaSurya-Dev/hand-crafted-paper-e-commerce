@@ -53,7 +53,6 @@ INSTALLED_APPS = [
     'checkout.apps.CheckoutConfig',
     'profiles.apps.ProfilesConfig',
     'blog.apps.BlogConfig',
-    'newsletter.apps.NewsletterConfig',
 
     # 3rd party
     'allauth',

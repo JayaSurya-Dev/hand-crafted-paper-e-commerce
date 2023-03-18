@@ -116,6 +116,10 @@
 
 {% endblock content %}
 
+{% block footer %}
+    {% include 'includes/footer.html' %}
+{% endblock footer %}
+
 {% block postloadjs %}
     {{ block.super }}
     <script>

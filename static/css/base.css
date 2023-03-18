@@ -15,6 +15,33 @@ body {
     font-family: 'Montserrat', 'sans-serif';
 }
 
+.wrapper {
+    max-width: 50rem;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+section {
+    padding-block: 5rem;
+}
+
+.wavy {
+    /* mask created with 
+    https://css-generators.com/wavy-shapes/ */
+
+    background:
+        linear-gradient(to right,
+            #d0b360,
+            #544a92);
+
+    --mask:
+        radial-gradient(55.90px at 50% 75.00px, #000 99%, #0000 101%) calc(50% - 50px) 0/100px 100%,
+        radial-gradient(55.90px at 50% -50px, #0000 99%, #000 101%) 50% 25px/100px 100% repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+}
+
 /* ------------------------------- Colours */
 
 .text-black {
@@ -103,6 +130,18 @@ body {
     color: #e4e0ff;
 }
 
+#mc_embed_signup .button {
+    background: #121022;
+    color: #d0b360;
+    border: 1px solid #121022 !important;
+}
+
+#mc_embed_signup .button:hover {
+    background: #d0b360;
+    color: #121022;
+    border: 1px solid #d0b360 !important;
+}
+
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
@@ -188,6 +227,7 @@ a.category-badge>span.badge:hover {
     position: fixed;
     bottom: 10px;
     right: 10px;
+    z-index: 100;
 }
 
 .btt-link,
@@ -289,6 +329,42 @@ input[name='q']:focus {
     height: 100px;
     overflow-x: hidden;
     overflow-y: auto;
+}
+
+/* Mailchimp newsletter Form*/
+
+#mc_embed_signup {
+    background: transparent;
+    clear: left;
+    font: 14px Helvetica, Arial, sans-serif;
+    max-width: 600px;
+}
+
+/* Footer */
+footer {
+    background: #121022;
+}
+
+footer,
+footer a,
+footer i {
+    text-align: center;
+    color: #d0b360
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #e4e0ff !important;
+}
+
+footer i:hover {
+    text-decoration: none;
+    color: #e4e0ff !important;
+}
+
+footer i {
+    padding: 1rem 0.5rem;
+    font-size: 1.5rem;
 }
 
 /* Allauth form formatting */

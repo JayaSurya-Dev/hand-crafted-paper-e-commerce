@@ -28,7 +28,6 @@ urlpatterns = [
     path('checkout/', include('checkout.urls', namespace='checkout')),
     path('profile/', include('profiles.urls', namespace='profiles')),
     path('blog/', include('blog.urls', namespace='blog')),
-    path('newsletter/', include('newsletter.urls', namespace='newsletter')),
 ]
 
 if settings.DEBUG:
