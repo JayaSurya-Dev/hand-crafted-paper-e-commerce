@@ -3,6 +3,7 @@ from django.shortcuts import (
     reverse, get_object_or_404)
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, PageNotAnInteger
 
 from .models import UserProfile
 from .forms import UserProfileForm
@@ -14,9 +15,16 @@ from products.models import Product
 @login_required
 def wish_list(request):
     new_wish = Product.objects.filter(wishlist=request.user)
+    paginator = Paginator(new_wish, 12)
+    page = request.GET.get("page")
+    try:
+        new_wish = paginator.page(page)
+    except PageNotAnInteger:
+        new_wish = paginator.page(1)
     template = 'profiles/wishlist.html'
     context = {
         'new_wish': new_wish,
+        'page': page,
     }
     return render(request, template, context)
 
