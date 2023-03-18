@@ -27,10 +27,9 @@ def add_to_cart(request, item_id):
     except ValueError as e:
         messages.error(
                     request,
-                    f'ValueError: {e} - Quantity must be a digit.')
+                    f'Quantity must be a digit.')
         return redirect(redirect_url)
 
-    cart = request.session.get('cart', {})
     size = None
 
     if 'product_size' in request.POST:
@@ -79,10 +78,9 @@ def adjust_cart(request, item_id):
     except ValueError as e:
         messages.error(
                     request,
-                    f'ValueError: {e} - Quantity must be a digit.')
+                    f'Quantity must be a digit.')
         return redirect(reverse('cart:view_cart'))
 
-    cart = request.session.get('cart', {})
     size = None
 
     if 'product_size' in request.POST:

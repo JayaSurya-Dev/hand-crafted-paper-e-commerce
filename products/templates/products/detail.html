@@ -72,30 +72,37 @@
                                 <div class="col-12">
                                     <p><strong>Frame Size:</strong></p>
                                     <select class="form-control rounded-0 w-50" name="product_size" id='id_product_size'>
-                                        <option value='8"x8"'>8"x8"</option>
-                                        <option value='8"x10"'>8"x10"</option>
-                                        <option value='9"x9"' selected>9"x9"</option>
-                                        <option value='12"x12"'>12"x12"</option>
-                                        <option value='11"x14"'>11"x14"</option>
+                                        <option value='20.32x20.32cm-8x8in'>
+                                            20.32 x 20.32cm | 8x8in</option>
+                                        <option value='20.32x25.4cm-8x10in'>
+                                            20.32 x 25.4cm | 8x10in</option>
+                                        <option value='22.86x22.86cm-9x9in' selected>
+                                            22.86 x 2.86cm | 9x9in</option>
+                                        <option value='30.48x30.48cm-12x12in'>
+                                            30.48 x 30.48cm | 12x12in</option>
+                                        <option value='27.94x35.56cm-11x14in'>
+                                            27.94 x 35.56cm | 11x14in</option>
                                     </select>
                                 </div>
                             {% endif %}
                             <div class="col-12">
                                 <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">
-                                    <div class="input-group">
+                                    <div class="input-group input-group-{{ product.id }}">
                                         <div class="input-group-prepend">
-                                            <button class="decrement-qty btn btn-quantity-black rounded-0" 
-                                                data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
+                                            <button class="decrement-qty btn btn-quantity-black rounded-0 decrement-qty_{{ product.id }}" 
+                                                data-item_id="{{ product.id }}">
                                                 <span class="icon">
                                                     <i class="fas fa-minus"></i>
                                                 </span>
                                             </button>
                                         </div>
-                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        <input class="form-control qty_input id_qty_{{ product.id }}" type="number"
+                                            name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ product.id }}">
                                         <div class="input-group-append">
-                                            <button class="increment-qty btn btn-quantity-black rounded-0"
-                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                            <button class="increment-qty btn btn-quantity-black rounded-0 increment-qty_{{ product.id }}"
+                                                data-item_id="{{ product.id }}">
                                                 <span class="icon">
                                                     <i class="fas fa-plus"></i>
                                                 </span>
@@ -104,7 +111,6 @@
                                     </div>
                                 </div>
                             </div>
-
                             <div class="col{% if s %}-12 mt-2{% endif %}">
                                 <a href="{% url 'products:product_list' %}" class="btn btn-outline-black rounded-0 mt-3">
                                     <span class="icon">
@@ -112,7 +118,7 @@
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-3" value="Add to Cart">
+                                <input type="submit" class="btn btn-quantity-black rounded-0 text-uppercase mt-3" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             {% endwith %}
@@ -154,7 +160,7 @@
                 <form action="." method="POST">
                     {% csrf_token %} 
                     {{ form | crispy | safe }}
-                    <button type="submit" class="btn btn-black">Add Review</button>
+                    <button type="submit" class="btn btn-quantity-black">Add Review</button>
                 </form>
                 <!-- ./ review form -->         
                 {% else %} <p>
