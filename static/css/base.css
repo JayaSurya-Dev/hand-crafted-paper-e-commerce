@@ -92,6 +92,7 @@ section {
     color: #e4e0ff !important;
 }
 
+.accordion-btn-link,
 .text-link {
     text-decoration: none;
     color: #121022;
@@ -99,6 +100,19 @@ section {
 
 .text-link:hover {
     color: #121022;
+}
+
+.accordion-btn-link:hover {
+    font-weight: 500;
+    text-decoration: none;
+    background: #121022;
+    text-transform: capitalize;
+    color: #d0b360;
+}
+
+#FaqAccordion .card-header {
+    background-color: #e4e0ff !important;
+    border-bottom: 1px solid #d0b360;
 }
 
 .bg-header {

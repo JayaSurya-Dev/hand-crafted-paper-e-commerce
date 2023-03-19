@@ -1,0 +1,65 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block extra_title %} | {{ page_title }} {% endblock %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock page_header %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col text-center mt-3">
+            <h2 class="logo-font">
+                {% if category %} {{ category.friendly_name }} {% else %} {{page_title}} {% endif %}
+            </h2>
+            {% for cc in current_categories %}
+            <a class="category-badge text-decoration-none" href="{% url 'products:product_list' %}?category={{ cc.name }}">
+                <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ cc.friendly_name }}</span>
+            </a>
+            {% endfor %}
+            <hr class="w-50 mb-4">
+        </div>
+    </div>
+    {% for faq in faqs %}
+    <div class="row">
+        <div class="col text-left mt-3">
+            <div class="accordion" id="FaqAccordion">
+                <div class="card">
+                  <div class="card-header" id="heading{{faq.id}}">
+                    <p class="mb-0">
+                      <button class="btn accordion-btn-link" type="button" data-toggle="collapse" data-target="#collapse{{faq.id}}" aria-expanded="true" aria-controls="collapse{{faq.id}}">
+                        <strong>{{ faq.question | safe }}</strong>
+                      </button>
+                    </p>
+                  </div>              
+                  <div id="collapse{{faq.id}}" class="collapse show" aria-labelledby="heading{{faq.id}}" data-parent="#FaqAccordion">
+                    <div class="card-body">
+                        {{ faq.answer | safe }}
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+      {% endfor %}
+</div>
+
+{% endblock content%}
+
+{% block footer %}
+    {% include 'includes/footer.html' %}
+{% endblock footer %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script type="text/javascript">
+    $('.collapse').collapse()
+</script>
+{% endblock %}

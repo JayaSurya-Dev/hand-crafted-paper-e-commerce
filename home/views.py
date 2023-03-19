@@ -4,9 +4,13 @@ from django.contrib.auth.decorators import login_required
 from django.core.mail import BadHeaderError, send_mail
 from django.http import HttpResponse
 from django.contrib import messages
+
 from django.template.loader import render_to_string
-from blog.models import Post
+
+from .models import FAQ
 from .forms import ContactForm
+
+from blog.models import Post
 
 
 def index(request):
@@ -23,6 +27,20 @@ def about_view(request):
     template = ["home/about.html"]
     context = {
         "page_title": "About",
+    }
+
+    return render(request, template, context)
+
+
+def frequently_asked_questions_view(request):
+    """
+    Render the frequently asked questions page template
+    """
+    faqs = FAQ.objects.filter(active=True)
+    template = ["home/faq.html"]
+    context = {
+        "page_title": "Frequently Asked Questions",
+        "faqs": faqs,
     }
 
     return render(request, template, context)

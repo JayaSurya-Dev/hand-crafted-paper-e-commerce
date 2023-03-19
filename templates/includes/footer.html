@@ -1,6 +1,6 @@
 {% load static %}
   <!-- Begin Mailchimp Signup Form -->
-  <section class="wavy">
+  <section class="wavy mt-5 pb-3">
     <div class="wrapper" id="mc_embed_signup">
        <form action="https://herokuapp.us21.list-manage.com/subscribe/post?u=a98d81c1547b00c42d836d650&amp;id=59408bf224&amp;f_id=007c88e1f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
           <div id="mc_embed_signup_scroll">
@@ -20,7 +20,7 @@
           <div class="optionalParent">
             <div class="clear foot">
                 <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                <p class="brandingLogo"><a href="http://eepurl.com/iml5Mg" title="Mailchimp - email marketing made easy and fun" target="_blank" rel="noopener"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg"></a></p>
+                <p class="brandingLogo"><a href="http://eepurl.com/iml5Mg" title="Mailchimp - email marketing made easy and fun" target="_blank" rel="noopener"><img src="https://eep.io/mc-cdn-images/template_images/branding_logo_text_dark_dtp.svg" alt="mailchimp logo"></a></p>
             </div>
           </div>
           </div>
@@ -56,16 +56,15 @@
     <div class="col-sm-4 order-3">
       <span class="text-uppercase">Extras</span>
       <ul class="list-unstyled mt-2">
-        {% if request.user.is_authenticated %}  <li>
+        <li>
           <a href="{% url 'home:about_view' %}">about</a>
         </li>
         <li>
-          <a href="{% url 'home:contact_view' %}">contact</a>
+          <a href="{% url 'home:contact_view' %}">contact us</a>
         </li>
-        {% else %} <li>
-          <a href="{% url 'home:about_view' %}">about</a>
-        </li>     
-        {% endif %}
+        <li>
+          <a href="{% url 'home:faq_view' %}">FaQ</a>
+        </li>
       </ul>
     </div>
     <div class="col-sm-4">
@@ -129,12 +128,10 @@
       </ul>
     </div>
   </div>
-  <div class="inline-block">
-    <p class="m-0">
-        Powered by: 
-        <i class="fa-brands fa-cc-stripe fs-3"></i>
-    </p>
-  </div>
+  <p class="inline-block m-0">
+      Powered by: 
+      <i class="fa-brands fa-cc-stripe fs-3"></i>
+  </p>
   <p class="inline-block">
         <small> Developed by <a href="https://github.com/JoseMGuerra/hand-crafted-paper-e-commerce" target="_blank" rel="noopener" aria-label="Find me on Github (link opens in a new tab)">Jose Guerra <i class="fa-brands fa-github"></i></a> for educational purposes only</small>
   </p>

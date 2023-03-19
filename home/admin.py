@@ -1,3 +1,20 @@
 from django.contrib import admin
+from .models import FAQ
+from django.contrib.auth.decorators import login_required
 
-# Register your models here.
+
+@admin.register(FAQ)
+class FAQAdmin(admin.ModelAdmin):
+    """
+    Frequent Asked Question model in admin panel
+    """
+
+    list_display = (
+        'question',
+        'active',
+        'created_on',
+        )
+
+    list_editable = (
+        'active',
+    )
