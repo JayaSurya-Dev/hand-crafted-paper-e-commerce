@@ -8,7 +8,7 @@ html {
 }
 
 body {
-    background: url('/media/background-flowers_optimized.png') no-repeat center center fixed;
+    background: url('https://res.cloudinary.com/handcrafteddesigns/image/upload/v1679259390/media/background-flowers_optimized.png') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #121023bf;
