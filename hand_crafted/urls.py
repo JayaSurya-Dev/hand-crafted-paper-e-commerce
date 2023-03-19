@@ -15,25 +15,29 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.staticfiles.storage import staticfiles_storage
 from django.conf import settings
+from django.views.generic.base import RedirectView
 from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('summernote/', include('django_summernote.urls')),
+    path('favicon.ico',
+         RedirectView.as_view(url=staticfiles_storage.url('favicon.ico'))),
     path('', include('home.urls', namespace='home')),
     path('products/', include('products.urls', namespace='products')),
     path('cart/', include('cart.urls', namespace='cart')),
     path('checkout/', include('checkout.urls', namespace='checkout')),
     path('profile/', include('profiles.urls', namespace='profiles')),
     path('blog/', include('blog.urls', namespace='blog')),
+
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
                           document_root=settings.MEDIA_ROOT)
-
 
 handler403 = 'hand_crafted.views.handler403'
 handler404 = 'hand_crafted.views.handler404'
