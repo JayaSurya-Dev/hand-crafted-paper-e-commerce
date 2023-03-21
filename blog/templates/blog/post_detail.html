@@ -37,7 +37,7 @@
                 {% if post.featured_image %}
                     <img class="card-img-top" src="{{ post.featured_image.url }}" alt="{{ post.title }}">
                     {% else %}
-                    <img class="card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ post.title }}">
+                    <img class="card-img-top" src="https://res.cloudinary.com/handcrafteddesigns/image/upload/v1679259402/media/noimage.png" alt="{{ post.title }}">
                 {% endif %}
                 <div class="card-body">
                     <h5 class="card-title text-center">{{ post.title }}</h5>
