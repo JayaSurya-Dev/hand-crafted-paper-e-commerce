@@ -494,18 +494,32 @@ footer i {
 
 /* adjust text size in smaller screens */
 @media (min-width: 1250px) {
-    header h2 {
+    header .h4 {
         font-size: 1.5rem;
     }
 }
 
 @media (max-width: 1250px) {
-    header h2 {
-        font-size: 1.1rem;
+    header .h4 {
+        font-size: 1.3rem;
     }
 
     #main-nav a,
     #delivery-banner p {
+        font-size: smaller;
+    }
+
+    span .wish-btn {
+        margin-top: 0.4rem;
+    }
+}
+
+@media (max-width: 1115px) {
+    header .h4 {
+        font-size: 1.1rem;
+    }
+
+    .buy-btns span {
         font-size: smaller;
     }
 }
@@ -515,6 +529,10 @@ footer i {
 
     body {
         height: calc(100vh - 116px);
+    }
+
+    body h1 {
+        font-size: 1.5rem;
     }
 
     .display-4.logo-font.text-black {

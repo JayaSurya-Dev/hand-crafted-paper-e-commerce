@@ -16,6 +16,7 @@
 <div class="container">
     <div class="row">
         <div class="col text-center mt-3">
+            <hr class="w-50 mb-4">
             <h2 class="logo-font">
                 {% if category %} {{ category.friendly_name }} {% else %} {{page_title}} {% endif %}
             </h2>
@@ -34,7 +35,7 @@
                 <div class="card">
                   <div class="card-header" id="heading{{faq.id}}">
                     <p class="mb-0">
-                      <button class="btn accordion-btn-link" type="button" data-toggle="collapse" data-target="#collapse{{faq.id}}" aria-expanded="true" aria-controls="collapse{{faq.id}}">
+                      <button class="btn accordion-btn-link" data-toggle="collapse" data-target="#collapse{{faq.id}}" aria-expanded="true" aria-controls="collapse{{faq.id}}">
                         <strong>{{ faq.question | safe }}</strong>
                       </button>
                     </p>
@@ -59,7 +60,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('.collapse').collapse()
 </script>
 {% endblock %}
