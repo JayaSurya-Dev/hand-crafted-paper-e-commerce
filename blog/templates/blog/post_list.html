@@ -18,9 +18,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="logo-font">
+                <hr class="w-50 mb-3">
+                <h1 class="logo-font">
                     {% if category %} {{ category.friendly_name }} {% else %} {{page_title}} {% endif %}
-                </h2>
+                </h1>
                 {% for cc in current_categories %}
                 <a class="category-badge text-decoration-none" href="{% url 'products:product_list' %}?category={{ cc.name }}">
                     <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ cc.friendly_name }}</span>
@@ -55,11 +56,11 @@
                                 </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">
+                                    <h6 class="mb-0">
                                     <a class="text-link" href="{% url 'blog:post_detail' post.slug %}">
                                         {{ post.title }}
                                     </a>
-                                    </p>
+                                </h6>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
