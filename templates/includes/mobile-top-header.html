@@ -50,9 +50,9 @@
     <a class="{% if grand_total %}text-black font-weight-bold{% else %}text-black{% endif %} nav-link d-block d-lg-none" href="{% url 'cart:view_cart' %}">
         <div class="text-center">
             {% if grand_total %}
-            <div><i class="fas fa-shopping-bag fa-lg text-brown"></i></div>
+            <div><i class="fas fa-shopping-cart fa-lg text-brown"></i></div>
             {% else %}
-            <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+            <div><i class="fas fa-shopping-cart fa-lg"></i></div>
             {% endif %}
             <p class="my-0">
                 {% if grand_total %}
