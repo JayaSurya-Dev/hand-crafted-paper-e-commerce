@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+Sitemap: https://handcrafteddesigns.herokuapp.com/sitemap.xml

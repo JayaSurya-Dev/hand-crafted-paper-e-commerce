@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/accounts/login/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/cart/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?sort=price&amp;direction=asc</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?sort=category&amp;direction=asc</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=full_flower_box</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=heart_flower_box</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=animal_flower_box</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=initial_number_flower_box</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=full_flower_box,heart_flower_box,initial_number_flower_box,animal_flower_box</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=birthday_cake_topper</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=anniversary_cake_topper</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=wedding_cake_topper</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=birthday_cake_topper,anniversary_cake_topper,wedding_cake_topper</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/blog/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=new_products</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=deals</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=clearance</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/?category=new_products,deals,clearance</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/pages/about/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/5/birthday-cake-topper-blue/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/7/wedding-cake-topper/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/1/full-flower-box/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/4/initial-m-flower-shadow-box/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/6/anniversary-cake-topper/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/2/butterfly-flower-box-green/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/products/3/heart-flower-box/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/accounts/login/?next=/pages/contact/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/pages/faq/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/blog/article/how-to-make-handcrafted-paper-flower-shadow-boxes/</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/accounts/signup/?next=%2Fpages%2Fcontact%2F</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://handcrafteddesigns.herokuapp.com/accounts/login/?next=%2Fpages%2Fcontact%2F</loc>
+  <lastmod>2023-03-24T18:23:42+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>
