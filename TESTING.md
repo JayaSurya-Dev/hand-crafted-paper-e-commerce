@@ -693,16 +693,51 @@
 ## JsHint
 
 - <details>
-  <summary>Jshint ajax likes</summary>
+  <summary>Jshint Stripe Elements</summary>
 
-  - ![jshint ajax likes](readme_images/jshint-likeajax.png)
+  - ![Jshint stripe elements](readme_images/jshint/jshint-stripe-elements.png)
 
   </details>
 
 - <details>
-  <summary>Jshint messages setTimeOut</summary>
+  <summary>Jshint New Image</summary>
 
-  - ![Jshint messages setTimeOut](readme_images/jshint-messages-settimeout.png)
+  - ![Jshint new image](readme_images/jshint/jshint-new-image.png)
+
+  </details>
+
+- <details>
+  <summary>Jshint Scroll to Top</summary>
+
+  - ![Jshint scroll to top](readme_images/jshint/jshint-scroll-to-top.png)
+
+  </details>
+
+- <details>
+  <summary>Jshint update / remove item</summary>
+
+  - ![Jshint update / remove](readme_images/jshint/jshint-update-remove-item.png)
+
+  </details>
+
+- <details>
+  <summary>Jshint handle enable disable quantity</summary>
+
+  - ![Jshint handle enable disable quantity](readme_images/jshint/jshint-handle-enable-disable-quantity.png)
+
+  </details>
+
+- <details>
+  <summary>Jshint search sort and direction</summary>
+
+  - ![Jshint search sort and direction](readme_images/jshint/jshint-product-sort-and-direction.png)
+
+  </details>
+
+- <details>
+  <summary>Jshint country fields</summary>
+
+  - ![Jshint country fields](readme_images/jshint/jshint-country-fields.png)
 
   </details>
 
