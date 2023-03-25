@@ -26,6 +26,11 @@ their work and showcase their talent to the world.
 
 ---
 
+- ![readme navigation](readme_images/readme-menu-icon.png)
+- Tip: use the top sticky-menu to easily navigate the readme file.
+
+---
+
 ## Features
 
 ### **Navigation Bar**
@@ -402,6 +407,31 @@ The footer is featured across the application.
   - ![footer registered user](readme_images/footer-registered-user.png)
 
 </details>
+
+---
+
+### **Custom Error Pages**
+
+Custom Error Pages are displayed in case an error occurs on client, server or database side. It provides a better user experience and give the user the ability to easily return to the shop area.
+Each error page displays a specific error code in the title. The user can still use the main navbar to navigate or click the large button in the middle of the page to return to shop.
+
+- 403 Forbidden Request
+- 404 Page Not Found
+  - <details>
+    <summary>404 error page image</summary>
+
+    ![404 error page](readme_images/404-page-not-found.png)
+
+  </details>
+
+- 405 Method Not Allowed
+- 500 Internal Server Error
+  - <details>
+    <summary>500 error page image</summary>
+
+    ![500 error page](readme_images/500-internal-server-error.png)
+
+  </details>
 
 ---
 
