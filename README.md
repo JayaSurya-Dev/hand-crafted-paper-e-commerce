@@ -1298,17 +1298,12 @@ the following has been implemented:
 - meta keywords tag
 - xml sitemap
 - robots.txt
-- google ownership verification
 
 - <details>
     <summary>SEO detail</summary>
 
-  - xml sitemap
-
-  ![xml sitemaps](readme_images/xml-sitemap.png)
-
   - sitemap schema
-  ![xml sitemaps schema](readme_images/sitemap-schema.png)
+  ![xml sitemaps schema](readme_images/xml-sitemap.png)
 
   - robots txt file
 
