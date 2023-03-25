@@ -334,9 +334,8 @@ their work and showcase their talent to the world.
 </details>
 
 - <details>
-    <summary>Company Facebook Page</summary>
+    <summary>Facebook Business Page</summary>
 
-  - ![company facebook page](readme_images/company-facebook-page.png)
   - ![facebook business page](readme_images/facebook-business-page.png)
 
 </details>
@@ -443,6 +442,37 @@ Each error page displays a specific error code in the title. The user can still 
 
 ---
 
+### **Database Diagram and Flowcharts**
+
+- <details>
+  <summary>dbDiagram</summary>
+
+    ![database relationship diagram](readme_images/e-commerce-db-relationships.png)
+
+  </details>
+
+- <details>
+  <summary>Admin / authorized staff flowchart</summary>
+
+    ![admin / authorized staff flowchart](readme_images/ecommerce-admin-flowchart.png)
+
+  </details>
+
+- <details>
+  <summary>Authenticated user flowchart</summary>
+
+    ![authenticated user flowchart](readme_images/ecommerce-authenticated-flowchart.png)
+
+  </details>
+
+- <details>
+  <summary>Unauthenticated user flowchart</summary>
+
+    ![unauthenticated user flowchart](readme_images/ecommerce-unauthenticated-flowchart.png)
+
+  </details>
+
+---
 ## User Experience (UX)
 
 ### **User Stories**
@@ -653,8 +683,6 @@ Each error page displays a specific error code in the title. The user can still 
     - Check your code for CSS validation.
   - [Gauger:](https://gauger.io/fonticon/)
     - Used to create the favicon Logo, create beautiful favicon with ease.
-  - [Smartdraw:](https://cloud.smartdraw.com/)
-    - Used to create the site diagram.
   - [Contrast Checker](https://webaim.org/resources/contrastchecker/)
     - Tool to check the contrast ratio.
   - [xml sitemaps](https://www.xml-sitemaps.com/)
