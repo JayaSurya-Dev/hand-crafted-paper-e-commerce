@@ -744,13 +744,6 @@
 ## Automated Tests
 
 - <details>
-  <summary>Jest-Test Remove flash message alert</summary>
-
-  - ![Jest-Test Remove flash message alert](readme_images/test-jest-remove-flash-message.png)
-  
-  </details>
-
-- <details>
   <summary>Unit Testing coverage report</summary>
 
   - ![Unittest TestCase coverage](readme_images/unittest-coverage-report.png)

@@ -2,12 +2,13 @@
 
 # Hand-Crafted Designs E-Commerce
 
+![am i responsive](readme_images/ami-responsive.png)
 ## Introduction
 
-This project is a B2C e-commerce store that provides an online platform for a local hand-crafted paper
+This project is a Business to Customer (B2C) e-commerce store that provides an online platform for a local hand-crafted paper
 artist to sell their products. My name is **Jose Guerra** and I developed this site as My Personal Portafolio Project 5 (PP5)
 of my [**Fullstack Web Development Diploma (with e-commerce applications**](https://codeinstitute.net/courses) with
-the **Code Institute**. The website is built using Django 3.2 and Bootstrap 4 for the
+the [**Code Institute**](https://codeinstitute.net). The website is built using Django 3.2 and Bootstrap 4 for the
 front-end design, with Stripe for secure payment processing, Cloudinary for storage of static and media files, and is hosted on Heroku with
 ElephantSQL for database storage.
 
@@ -26,8 +27,10 @@ their work and showcase their talent to the world.
 
 ---
 
+### **Table of Content**
+
+- Use the sticky-menu above to easily navigate the readme file.
 - ![readme navigation](readme_images/readme-menu-icon.png)
-- Tip: use the top sticky-menu to easily navigate the readme file.
 
 ---
 
@@ -442,6 +445,37 @@ Each error page displays a specific error code in the title. The user can still 
 
 ---
 
+### **Wireframes**
+
+- <details>
+  <summary>Homepage wireframe</summary>
+
+    ![homepage wireframe](readme_images/wireframes/wireframe-homepage.png)
+
+  </details>
+
+- <details>
+  <summary>Product list wireframe</summary>
+
+    ![product list wireframe](readme_images/wireframes/wireframe-product-list.png)
+
+  </details>
+
+- <details>
+  <summary>Product detail wireframe</summary>
+
+    ![product detail wireframe](readme_images/wireframes/wireframe-product-detail.png)
+
+  </details>
+
+- <details>
+  <summary>Shopping Cart wireframe</summary>
+
+    ![shopping cart wireframe](readme_images/wireframes/wireframe-shopping-cart.png)
+
+  </details>
+
+---
 ### **Database Diagram and Flowcharts**
 
 - <details>
@@ -1380,26 +1414,6 @@ the following has been implemented:
 - [TESTING.md](TESTING.md)
 
 ### **Running automated tests**
-
-- <details>
-    <summary>JavaScript automated tests</summary>
-
-  - The automated javascript test can be executed using Jest as follows:
-
-  - If Jest is not installed then run the command:
-
-          npm install --save-dev jest
-
-  - Jest-environment-jsdom is used as testing environment for Jest allowing to test code that interacts with the DOM using a virtual DOM powered by jsdom.
-  - Jest-environment-jsdom, need to be it installed in your project. This can be done using npm by running the following command:
-
-          npm install --save-dev jest-environment-jsdom
-
-  - Run the js test file using the command :
-
-          npm test
-
-</details>
 
 - <details>
     <summary>Unit test automated tests</summary>
