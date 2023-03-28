@@ -117,9 +117,8 @@ def post_create(request):
             messages.success(
                 request, "Article has been created successfully.")
 
-            return redirect(reverse("blog:post_detail", kwargs={
-                "slug": form.instance.slug
-            }))
+            return redirect(reverse("blog:post_detail",
+                                    kwargs={'slug': form.instance.slug}))
         else:
             form = PostForm()
 
@@ -154,31 +153,29 @@ def post_update(request, slug):
 
     post = get_object_or_404(Post, slug=slug)
 
+    if not request.user.is_staff:
+        messages.error(request, 'Sorry, only authorized staff can do that.')
+        return redirect(reverse("blog:post_list"))
+
     if request.user.is_staff:
         form = PostForm(
             request.POST or None,
             request.FILES or None,
             instance=post)
 
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only authorized staff can do that.')
-        return redirect(reverse("home:index"))
+        if request.method == "POST":
+            if form.is_valid():
+                form.save()
+                messages.success(
+                    request, "Your article has been successfully updated.")
+                return redirect(reverse("blog:post_detail",
+                                        kwargs={'slug': form.instance.slug}))
+            else:
+                messages.error(request, 'Failed to update article. \
+Please ensure the form is valid.')
 
-    if request.method == "POST":
-        if form.is_valid():
-            form.save()
-            messages.success(
-                request, "Your article has been successfully updated.")
-            return redirect(reverse("blog:post_detail", kwargs={
-                "slug": form.instance.slug
-            }))
-        else:
-            messages.error(request,
-                           'Failed to update article. \
-                            Please ensure the form is valid.')
-    else:
-        form = PostForm(instance=post)
-        messages.info(request, f'You are editing {post.title}')
+    form = PostForm(instance=post)
+    messages.info(request, f'You are editing {post.title}')
 
     template = "blog/post_create.html"
     context = {
