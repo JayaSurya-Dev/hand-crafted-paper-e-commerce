@@ -82,7 +82,7 @@
                                                     <small class="text-muted">No Rating</small>
                                                 {% endif %}
                                                 <small class="ml-3">                     <a class="text-info" href="{% url 'products:product_detail' product.id product.slug %}">Buy</a> |
-                                                <a class="text-danger" href="{% url 'profiles:wish_add' product.id product.slug %}">Remove</a>
+                                                <a class="text-danger" href="{% url 'profiles:wish_add_remove' product.id product.slug %}">Remove</a>
 
                                                 </small>
                                             </div>

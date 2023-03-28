@@ -30,7 +30,7 @@ def wish_list(request):
 
 
 @login_required
-def wish_add(request, product_id, slug):
+def wish_add_remove(request, product_id, slug):
     product = get_object_or_404(Product, id=product_id, slug=slug)
     if product.wishlist.filter(id=request.user.id).exists():
         product.wishlist.remove(request.user)
