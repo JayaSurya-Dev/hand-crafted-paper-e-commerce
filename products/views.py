@@ -133,7 +133,7 @@ def add_product(request):
     Returns:
         HttpResponse: The rendered HTML template for the add product page.
     """
-    if not request.user.is_superuser:
+    if not request.user.is_staff:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home:index'))
 
@@ -145,9 +145,9 @@ def add_product(request):
             return redirect(reverse('products:product_detail',
                             args=[product.id, product.slug]))
         else:
-            messages.error(request,
-                           'Failed to add product. \
-                            Please ensure the form is valid.')
+            messages.error(request, 'Failed to add product. \
+Please ensure the form is valid.')
+
     else:
         form = ProductForm()
 
@@ -170,12 +170,14 @@ def edit_product(request, product_id, slug):
     Returns:
         HttpResponse: The rendered HTML template for the edit product page.
     """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+
+    if not request.user.is_staff:
+        messages.error(request, 'Sorry, only store owners can edit products.')
         return redirect(reverse('home:index'))
 
     product = get_object_or_404(Product,
                                 pk=product_id, slug=slug)
+
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
@@ -186,7 +188,7 @@ def edit_product(request, product_id, slug):
         else:
             messages.error(
                 request, 'Failed to update product. \
-                    Please ensure the form is valid.')
+Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
         messages.info(request, f'You are editing {product.name}')
@@ -211,8 +213,9 @@ def delete_product(request, product_id, slug):
     Returns:
         HttpResponse: The rendered HTML template for the product list page.
     """
-    if not request.user.is_superuser:
-        messages.error(request, 'Sorry, only store owners can do that.')
+    if not request.user.is_staff:
+        messages.error(request,
+                       'Sorry, only store owners can delete a product.')
         return redirect(reverse('products:product_list'))
 
     product = get_object_or_404(Product,

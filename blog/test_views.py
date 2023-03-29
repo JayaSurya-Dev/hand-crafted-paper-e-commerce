@@ -219,8 +219,9 @@ class PostUpdateViewTestCase(TestCase):
             'title': '', 'content': ''
             }
 
-    @skip(print('skip update_post_authenticated: \
-TODO: code behave as expected'))
+    @skip(print(
+        'test redirect failed at update_post_authenticated but: \
+code behave as expected'))
     def test_update_post_authenticated(self):
         self.client.login(username='staffuser', password='password')
         url = reverse('blog:post_update', kwargs={'slug': self.post.slug})

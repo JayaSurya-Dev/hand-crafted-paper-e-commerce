@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
+from django.utils.text import slugify
 
 
 RATING = [
@@ -85,6 +86,11 @@ class Product(models.Model):
         """ Returns category name """
         return self.name
 
+    def save(self, *args, **kwargs):
+        """Save method override with slugify"""
+        self.slug = slugify(self.name)
+        super(Product, self).save(*args, **kwargs)
+
     def get_absolute_url(self):
         """ Get the product detail absolute url """
         return reverse('products:product_detail',
@@ -118,5 +124,5 @@ class ProductReview(models.Model):
 
     def __str__(self):
         """ Returns a string representation of Product Review """
-        return f'{self.user.username} rated {self.stars} stars to\
-            {self.product.name}'
+        return f'{self.user.username} rated {self.stars} stars to \
+{self.product.name}'
