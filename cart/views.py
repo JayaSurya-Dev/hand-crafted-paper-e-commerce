@@ -43,7 +43,7 @@ def add_to_cart(request, item_id):
                 messages.success(
                     request,
                     f'Updated size {size.upper()} {product.name} \
-                    quantity to {cart[item_id]["items_by_size"][size]}')
+quantity to {cart[item_id]["items_by_size"][size]}')
             else:
                 cart[item_id]['items_by_size'][size] = quantity
                 messages.success(
@@ -93,7 +93,7 @@ def adjust_cart(request, item_id):
             messages.success(
                 request,
                 f'Updated size {size.upper()} {product.name} quantity to \
-                {cart[item_id]["items_by_size"][size]}')
+{cart[item_id]["items_by_size"][size]}')
         else:
             del cart[item_id]['items_by_size'][size]
             if not cart[item_id]['items_by_size']:
