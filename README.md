@@ -1343,9 +1343,7 @@ You will need the following software installed on your local machine:
       | Key | Value |
       | --- | --- |
       | SECRET_KEY | [YOUR SECRET KEY] |
-      | AWS_ACCESS_KEY_ID | [YOUR AWS ACCESS KEY ID] |
-      | AWS_SECRET_ACCESS_KEY | [YOUR AWS SECRET ACCESS KEY ] |
-      | USE_AWS | [BOOLEAN VALUE] |
+      | CLOUDINARY_URL | [YOUR CLOUDINARY URL] |
       | STRIPE_PUBLIC_KEY | [YOUR STRIPE PUBLIC KEY] |
       | STRIPE_SECRET_KEY | [YOUR STRIPE SECRET KEY] |
       | STRIPE_WH_SECRET | [YOUR STRIPE WEBHOOK SECRET KEY] |

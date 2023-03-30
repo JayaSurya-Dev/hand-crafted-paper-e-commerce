@@ -746,6 +746,6 @@
 - <details>
   <summary>Unit Testing coverage report</summary>
 
-  - ![Unittest TestCase coverage](readme_images/unittest-coverage-report.png)
+  - ![Unittest TestCase coverage](readme_images/test-coverage.png)
   
   </details>
