@@ -26,20 +26,44 @@ def product_list(request):
 
     if request.GET:
 
+        # Check if the 'sort' parameter is present in the GET request
         if 'sort' in request.GET:
+            # Get the value of the 'sort' parameter and assign it to 'sortkey'
             sortkey = request.GET['sort']
+            # Assign the value of 'sortkey' to 'sort' as well
             sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                products = products.annotate(lower_name=Lower('name'))
-            if sortkey == 'category':
-                sortkey = 'category__name'
 
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
-            products = products.order_by(sortkey)
+            # If the 'sortkey' parameter is 'rating', sort the products
+            # based on their rating
+            if sortkey == 'rating':
+                # Get the 'direction' parameter from the GET request,
+                # or use 'desc' as the default value
+                direction = request.GET.get('direction', 'desc').lower()
+                # Sort the products based on their rating, in either ascending
+                # or descending order depending on the value of 'direction'
+                products = sorted(
+                    products,
+                    # Use a lambda function as the sorting key to access the
+                    # rating of each product
+                    key=lambda p: p.get_rating(),
+                    # Set the 'reverse' argument to True if 'direction' is not
+                    # 'asc', which means sorting in descending order
+                    reverse=direction != 'asc')
+
+                # If the sorting method is anything else (e.g., 'name',
+                # 'price'),
+                # sort the products using the Django ORM's order_by method
+            else:
+                if sortkey == 'name':
+                    sortkey = 'lower_name'
+                    products = products.annotate(lower_name=Lower('name'))
+                if sortkey == 'category':
+                    sortkey = 'category__name'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'desc':
+                        sortkey = f'-{sortkey}'
+                products = products.order_by(sortkey)
 
         if 'category' in request.GET:
             categories = request.GET['category'].split(',')
