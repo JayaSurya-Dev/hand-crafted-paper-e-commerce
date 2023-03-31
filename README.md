@@ -6,25 +6,45 @@
 [Live Site Here &#127760;](https://handcrafteddesigns.herokuapp.com/)
 ## Introduction
 
-This project is a Business to Customer (B2C) e-commerce store that provides an online platform for a local hand-crafted paper
-artist to sell their products. My name is **Jose Guerra** and I developed this site as My Personal Portafolio Project 5 (PP5)
-of my [**Fullstack Web Development Diploma (with e-commerce applications**](https://codeinstitute.net/courses) with
-the [**Code Institute**](https://codeinstitute.net). The website is built using Django 3.2 and Bootstrap 4 for the
-front-end design, with Stripe for secure payment processing, Cloudinary for storage of static and media files, and is hosted on Heroku with
+This project is a e-commerce store that provides an online platform for a local hand-crafted paper
+artist to sell their products. My name is **Jose Guerra** and I developed this site as My Personal Portafolio Project 5 (PP5) of my [**Fullstack Web Development Diploma (with e-commerce applications**](https://codeinstitute.net/courses) with the [**Code Institute**](https://codeinstitute.net). The website is built using Django 3.2 and Bootstrap 4 for the front-end design, with Stripe for secure payment processing, Cloudinary for storage of static and media files, and is hosted on Heroku with
 ElephantSQL for database storage.
+
+---
+
+### **Project Goal**
 
 The goal of this project is to help the artist reach a wider audience and make their work more
 accessible to customers. With this platform, customers can easily browse and
 purchase the artist's products, and the artist can manage their sales and inventory through
 a simple and user-friendly interface.
 
-The project is open-source and licensed under the MIT License, allowing other developers to
-contribute and improve upon the code. The artist's work is protected by the Creative Commons
-Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License, ensuring
-that their work is used appropriately and with proper credit given.
+---
 
-Overall, this project aims to provide a seamless and secure platform for the artist to sell
-their work and showcase their talent to the world.
+### **Table of Content**
+
+- Use the sticky-menu above to easily navigate the readme file.
+- ![readme navigation](readme_images/readme-menu-icon.png)
+
+---
+
+## **Project Business Model**
+
+ This is a **B2C** Business to Customer e-commerce business model for selling handcrafted paper flower shadow boxes and with a Stripe payment gateway that provides a seamless shopping experience for customers while enabling the business to efficiently manage its operations and grow its customer base.
+
+**Product Offering**: The e-commerce application will offer a range of handcrafted paper flower shadow boxes and cards in various designs and sizes to its customers. These products will be showcased on the website with high-quality images and detailed descriptions.
+
+**Customer Acquisition**: The e-commerce application will use various marketing channels such as social media, email marketing, search engine optimization to attract potential customers to the website.
+
+**Ordering Process**: Customers will be able to browse the product catalog, select the items they want to purchase, and add them to their cart. The ordering process will be easy to navigate and user-friendly. Once the customer is ready to checkout, they will be asked to provide their shipping information and payment details.
+
+**Payment Gateway**: The e-commerce application will integrate with Stripe, a popular payment gateway that securely handles the payment process. Customers will be able to pay using various payment methods such as credit/debit cards, digital wallets, and bank transfers.
+
+**Order Fulfillment**: Once the payment has been processed, the e-commerce application will notify the customer that their order has been received and is being prepared for shipment. The application will then handle the order fulfillment process, which includes packaging the product, generating a shipping label, and sending it to the carrier for delivery.
+
+**Customer Support**: The e-commerce application will provide excellent customer support to ensure a positive shopping experience. Customers will be able to reach out to the support team via email for any inquiries or issues they may have with their order.
+
+**Feedback and Reviews**: After receiving their order, customers will be encouraged to leave feedback and reviews on the e-commerce application's website. This feedback will help the business improve its products and services and attract new customers.
 
 ---
 
@@ -38,13 +58,6 @@ When testing payments functionality in this project, use a card number,such as:
 - Use a valid future date, such as 12/34.
 - Use any three-digit CVC.
 - Use any value you like for other form fields.
-
----
-
-### **Table of Content**
-
-- Use the sticky-menu above to easily navigate the readme file.
-- ![readme navigation](readme_images/readme-menu-icon.png)
 
 ---
 
@@ -328,32 +341,6 @@ When testing payments functionality in this project, use a card number,such as:
     <summary>Stripe Endpoint</summary>
 
   - ![stripe endpoint](readme_images/stripe-endpoint-example.png)
-
-</details>
-
-### **Web Marketing**
-
-- <details>
-    <summary>Newsletter Functionality</summary>
-
-    As part of the web marketing strategy, a newsletter subscription functionality powered by
-    [Mailchimp](https://mailchimp.com/) is provided.
-
-  - ![newsletter form](readme_images/newsletter-form.png)
-
-</details>
-
-- <details>
-    <summary>MailChimp Audience</summary>
-
-  - ![newsletter form](readme_images/mailchimp-audience.png)
-
-</details>
-
-- <details>
-    <summary>Facebook Business Page</summary>
-
-  - ![facebook business page](readme_images/facebook-business-page.png)
 
 </details>
 
@@ -745,7 +732,7 @@ Each error page displays a specific error code in the title. The user can still 
 
 ---
 
-## Installing The Project In Your Local Machine
+## **Installing The Project In Your Local Machine**
 
 ### Prerequisites
 
@@ -792,7 +779,7 @@ You will need the following software installed on your local machine:
 
   </detail>
 
-## **Project Setup**
+### **Project Setup**
 
 - <details>
     <summary>To Setup a new Django Project, follow these steps:</summary>
@@ -1343,7 +1330,7 @@ You will need the following software installed on your local machine:
 
 ---
 
-## **Deployment to Heroku**
+### **Deployment to Heroku**
 
 - <details>
     <summary>To deploy the Django app with ElephantSQL to Heroku, follow these steps:</summary>
@@ -1394,7 +1381,33 @@ You will need the following software installed on your local machine:
 
 ---
 
-## **Search Engine Optimization (SEO)**
+### **Web Marketing**
+
+- <details>
+    <summary>Newsletter Functionality</summary>
+
+    As part of the web marketing strategy, a newsletter subscription functionality powered by
+    [Mailchimp](https://mailchimp.com/) is provided.
+
+  - ![newsletter form](readme_images/newsletter-form.png)
+
+</details>
+
+- <details>
+    <summary>MailChimp Audience</summary>
+
+  - ![newsletter form](readme_images/mailchimp-audience.png)
+
+</details>
+
+- <details>
+    <summary>Facebook Business Page</summary>
+
+  - ![facebook business page](readme_images/facebook-business-page.png)
+
+</details>
+
+### **Search Engine Optimization (SEO)**
 
 In order to improve the visibility of the site in a search engine's unpaid results
 the following has been implemented:
@@ -1523,8 +1536,10 @@ Jose Guerra 2023
 
 ## **License**
 
-This project is licensed under the MIT Licence and the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
-(CC BY-NC-ND 4.0) License- see the [LICENCE.md](LICENSE.md) file for details.
+The project is open-source and licensed under the MIT License, allowing other developers to
+contribute and improve upon the code. The artist's work is protected by the Creative Commons
+Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License
+ensuring that their work is used appropriately and with proper credit given - see the [LICENCE.md](LICENSE.md) file for details.
 
 ## **Images**
 
