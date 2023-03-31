@@ -748,4 +748,8 @@
 
   - ![Unittest TestCase coverage](readme_images/test-coverage.png)
   
+  - Failed tests:
+  
+    - ![Unittest TestCase failed tests](readme_images/failed-automated-tests.png)
+  
   </details>

@@ -46,15 +46,16 @@ def frequently_asked_questions_view(request):
     return render(request, template, context)
 
 
-@login_required
 def contact_view(request):
     """
     Handle the contact form submission.
     Display a blank form when called with an HTTP GET request.
     When called with an HTTP POST request, validate the form data
     and send an email if the form is valid.
+
     Args:
         request: An HTTP request object.
+
     Returns:
         An HTTP response object containing the contact form.
     """
@@ -77,6 +78,7 @@ def contact_view(request):
                     "recipient": recipient,
                     "content": content,
                 })
+            # Check that all necessary fields are present before sending email
             if name and email and content and recipient \
                     and subject and message and html:
                 try:
@@ -91,6 +93,7 @@ def contact_view(request):
                 except BadHeaderError:
                     return HttpResponse('Invalid header found.')
 
+                # Notify user that email was sent successfully
                 messages.success(request, 'Email Sent!!')
                 return redirect('products:product_list')
     else:

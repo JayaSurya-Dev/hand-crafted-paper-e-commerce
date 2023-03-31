@@ -383,7 +383,7 @@ class PostCommentTests(TestCase):
 
         messages = list(get_messages(response.wsgi_request))
         self.assertEqual(len(messages), 1)
-        self.assertEqual(str(messages[0]), "Your comment it's been reviewed.")
+        self.assertEqual(str(messages[0]), "Your comment is being reviewed.")
 
         self.assertTemplateUsed(response, 'blog/post_detail.html')
         self.assertTemplateUsed(response, 'includes/footer.html')
