@@ -673,8 +673,10 @@ Each error page displays a specific error code in the title. The user can still 
     - The Python Imaging Library adds image processing capabilities to your Python interpreter.
   - [Coverage:](https://coverage.readthedocs.io/en/latest/index.html)
     - Used for measuring code coverage of Python test files. -->
-  - [Jest:](https://jestjs.io/)
+  - [Jest:](https://jestjs.io/docs/28.x/getting-started)
     - A delightful JavaScript Testing Framework, used for automated tests.
+  - [Mixer](https://mixer.readthedocs.io/en/latest/quickstart.html#django-orm)
+    - Mixer is an object generation tool used for testing.
 
 </details>
 
@@ -727,6 +729,8 @@ Each error page displays a specific error code in the title. The user can still 
     - Used to create the database entity-relationship diagram.
   - [animate.css](https://animate.style/)
     - Animations
+  - [Muzli Colors](https://colors.muz.li/)
+    - Color palette
 
 </details>
 
@@ -1541,14 +1545,36 @@ contribute and improve upon the code. The artist's work is protected by the Crea
 Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License
 ensuring that their work is used appropriately and with proper credit given - see the [LICENCE.md](LICENSE.md) file for details.
 
-## **Images**
+### **Credit**
 
-- Cake topper image by [Georg H.](https://pixabay.com/users/aiky82-15308109/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=5835042) from [Pixabay](https://pixabay.com/photos/cake-birthday-cake-cake-topper-5835042/)
-- Cake topper image by [sever111](https://pixabay.com/users/sever111-2577789/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1571743) from [Pixabay](https://pixabay.com//?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1571743)
+- [Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1) for inspiration, which was customized to suit the project's objective.
+- [ci-pp4-django-fsf](https://github.com/JoseMGuerra/ci-pp4-django-fsf/blob/main/README.md) for the README format.
+- [Stack Overflow](https://stackoverflow.com/questions/7304248/how-should-i-write-tests-for-forms-in-django) for the test form validation snippet.
+- [W3schools](https://www.w3schools.com/django/index.php) for Django tutorials.
+- [Learn Django](https://learndjango.com/tutorials/django-testing-tutorial) for unit testing inspiration.
+- [Unit testing framework documentation](https://docs.python.org/3/library/unittest.html#skipping-tests-and-expected-failures) for skipping tests.
+- [Django documentation](https://docs.djangoproject.com/en/3.2/topics/testing/tools/) for testing tools.
+- [W3schools](https://www.w3schools.com/charsets/ref_emoji.asp) for readme emojis.
+- [dequeuniversity.com](https://dequeuniversity.com/rules/axe/4.4/label?utm_source=lighthouse&utm_medium=devtools) for input label lighthouse error fix.
+- [dequeuniversity.com](https://dequeuniversity.com/rules/axe/4.4/button-name?utm_source=lighthouse&utm_medium=devtools) for button name lighthouse error fix.
+- [GitHub documentation](https://docs.github.com/en/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message) for changing a commit message.
+- [privacypolicygenerator.info](https://www.privacypolicygenerator.info/) for the privacy policy HTML.
+- [Font Awesome](https://fontawesome.com/) for icons.
+- [Google Fonts](https://fonts.google.com/) for fonts.
+- [Cloudinary](https://cloudinary.com/) for file storage.
+- [Heroku](https://www.heroku.com/) for deployment.
+- [PostgreSQL](https://www.postgresql.org/) for the database.
+- [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) for form rendering.
+- [Django Allauth](https://django-allauth.readthedocs.io/en/latest/) for authentication.
+- [Stripe](https://stripe.com/) for payment processing.
+- [Pixabay](https://pixabay.com/) for the images.
+- [Unsplash](https://unsplash.com/) for the images.
+- [animate.css](https://animate.style/#utilities) for the animation.
+- [hover.css](https://ianlunn.github.io/Hover/) for the hover effect.
 
 ## **Acknowledgments**
 
-I would like to take a moment to acknowledge the immense support I have received from my coding mentor **Brian Macharia**, slack community, and fellow cohort who have been instrumental in my growth and development as a programmer. My mentor's guidance and expertise have been invaluable in helping me hone my skills and deepen my understanding of programming concepts. The supportive and collaborative environment of the slack community and my fellow classmates have kept me motivated and inspired throughout my learning journey. Thank you for your unwavering support and encouragement. I could not have come this far without you all.
+I would like to take a moment to acknowledge the immense support I have received from my coding mentor **Brian Macharia**, slack community, tutor support at [Code Institute](https://codeinstitute.net) and fellow cohort who have been instrumental in my growth and development as a programmer. My mentor's guidance and expertise have been invaluable in helping me hone my skills and deepen my understanding of programming concepts. The supportive and collaborative environment of the slack community and my fellow classmates have kept me motivated and inspired throughout my learning journey. Thank you for your unwavering support and encouragement. I could not have come this far without you all.
 
 ---
 
