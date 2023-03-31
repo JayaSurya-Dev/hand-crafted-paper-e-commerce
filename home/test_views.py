@@ -4,7 +4,7 @@ from django.contrib.messages import get_messages
 
 from django.contrib.auth.models import User
 
-from home.models import FAQ
+from .models import FAQ
 
 
 class HomePageTests(TestCase):
@@ -53,6 +53,31 @@ class AboutPageTests(TestCase):
         self.assertContains(
             response,
             "Welcome to Hand-Crafted Designs")
+        self.assertNotContains(response, "Not on the page")
+
+
+class PrivacyPolicyPageTests(TestCase):
+    """
+    Test Privacy Policy page view
+    """
+    def test_privacy_policy_url_exists_at_correct_location(self):
+        response = self.client.get("/pages/privacy_policy/")
+        self.assertEqual(response.status_code, 200)
+
+    def test_privacy_policy_url_available_by_name(self):
+        response = self.client.get(reverse("home:privacy_policy"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_privacy_policy_template_name_correct(self):
+        response = self.client.get(reverse("home:privacy_policy"))
+        self.assertTemplateUsed(response, "home/privacy_policy.html")
+        self.assertTemplateUsed(response, 'includes/footer.html')
+
+    def test_privacy_policy_template_content(self):
+        response = self.client.get(reverse("home:privacy_policy"))
+        self.assertContains(
+            response,
+            "Privacy Policy")
         self.assertNotContains(response, "Not on the page")
 
 

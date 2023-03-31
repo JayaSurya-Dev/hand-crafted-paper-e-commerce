@@ -3,6 +3,7 @@
 # Hand-Crafted Designs E-Commerce
 
 ![am i responsive](readme_images/ami-responsive.png)
+[Live Site Here &#127760;](https://handcrafteddesigns.herokuapp.com/)
 ## Introduction
 
 This project is a Business to Customer (B2C) e-commerce store that provides an online platform for a local hand-crafted paper
@@ -24,6 +25,19 @@ that their work is used appropriately and with proper credit given.
 
 Overall, this project aims to provide a seamless and secure platform for the artist to sell
 their work and showcase their talent to the world.
+
+---
+
+### **Note:**
+
+When testing payments functionality in this project, use a card number,such as:
+
+- **4242 4242 4242 4242** for successful payment or
+- **4000 0027 6000 3184** for 3D secure authentication.
+- Enter the card number in the payment form.
+- Use a valid future date, such as 12/34.
+- Use any three-digit CVC.
+- Use any value you like for other form fields.
 
 ---
 
@@ -608,6 +622,7 @@ Each error page displays a specific error code in the title. The user can still 
    Golden colour is used as the main accent colour transmiting luxury, achievement and success.
 
   ![complementary color palette](readme_images/color-scheme.png)
+  [https://colors.muz.li/palette/8860d0/544a92/e4e0ff/d0b360/927d43](https://colors.muz.li/palette/8860d0/544a92/e4e0ff/d0b360/927d43)
 
 </details>
 
@@ -1518,7 +1533,7 @@ This project is licensed under the MIT Licence and the Creative Commons Attribut
 
 ## **Acknowledgments**
 
-Thank you to ...
+I would like to take a moment to acknowledge the immense support I have received from my coding mentor **Brian Macharia**, slack community, and fellow cohort who have been instrumental in my growth and development as a programmer. My mentor's guidance and expertise have been invaluable in helping me hone my skills and deepen my understanding of programming concepts. The supportive and collaborative environment of the slack community and my fellow classmates have kept me motivated and inspired throughout my learning journey. Thank you for your unwavering support and encouragement. I could not have come this far without you all.
 
 ---
 

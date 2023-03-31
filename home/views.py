@@ -32,6 +32,18 @@ def about_view(request):
     return render(request, template, context)
 
 
+def privacy_policy_view(request):
+    """
+    Render the privacy policy page template
+    """
+    template = ["home/privacy_policy.html"]
+    context = {
+        "page_title": "Privacy Policy for Hand Crafted Designs",
+    }
+
+    return render(request, template, context)
+
+
 def frequently_asked_questions_view(request):
     """
     Render the frequently asked questions page template
@@ -46,6 +58,7 @@ def frequently_asked_questions_view(request):
     return render(request, template, context)
 
 
+@login_required
 def contact_view(request):
     """
     Handle the contact form submission.
@@ -59,6 +72,7 @@ def contact_view(request):
     Returns:
         An HTTP response object containing the contact form.
     """
+
     form = ContactForm()
     if request.method == 'POST':
         form = ContactForm(request.POST)

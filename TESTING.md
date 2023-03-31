@@ -108,6 +108,13 @@
   </details>
 
 - <details>
+  <summary>Privacy Policy Page</summary>
+
+  - ![privacy policy page](readme_images/html-checker/html-checker-privacy-policy.png)
+
+  </details>
+
+- <details>
   <summary>Contact Us Page</summary>
 
   - ![contact us page](readme_images/html-checker/html-checker-contact-page.png)
@@ -211,6 +218,13 @@
   <summary>FAQs</summary>
 
   - ![faqs](readme_images/css-checker/faq-page-css-validation.png)
+  
+  </details>
+
+- <details>
+  <summary>Privacy Policy</summary>
+
+  - ![privacy policy](readme_images/css-checker/css-checker-privacy-policy.png)
   
   </details>
 
@@ -550,6 +564,13 @@
   <summary>FAQs lighthouse test</summary>
 
   - ![FAQs lighthouse test](readme_images/lighthouse/faqs-lighthouse-test.png)
+  
+  </details>
+
+- <details>
+  <summary>Privacy Policy lighthouse test</summary>
+
+  - ![privacy policy lighthouse test](readme_images/lighthouse/privacy-policy-lighthouse-test.png)
   
   </details>
 

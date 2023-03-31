@@ -51,7 +51,7 @@
 </script>
 <!--End mc_embed_signup-->
 
-<footer class="container-fluid pt-4">
+<footer class="container-fluid pt-4 small">
     <div class="row" id="footer-details" >
     <div class="col-sm-4 order-3">
       <span class="text-uppercase">Extras</span>
@@ -64,6 +64,9 @@
         </li>
         <li>
           <a href="{% url 'home:faq_view' %}">FAQs</a>
+        </li>
+        <li>
+          <a href="{% url 'home:privacy_policy' %}">Privacy Policy</a>
         </li>
       </ul>
     </div>
@@ -114,9 +117,15 @@
       <span class="text-uppercase">Social</span>
       <ul class="list-inline social-links mt-2">
         <li class="list-inline-item">
-          <a href="https://www.facebook.com/profile.php?id=100091263159015" target="_blank" aria-label="Visit our facebook page (opens in a new tab)">
+          <a href="https://www.facebook.com/profile.php?id=100091263159015" target="_blank" rel="noopener" aria-label="Visit our facebook page (opens in a new tab)">
             <i class="fab fa-facebook" aria-hidden="true"></i>
             <span class="sr-only">Facebook</span>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://github.com/JoseMGuerra/hand-crafted-paper-e-commerce" target="_blank" rel="noopener" aria-label="Visit our facebook page (opens in a new tab)">
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span class="sr-only">Github</span>
           </a>
         </li>
         <li class="list-inline-item social-links">
@@ -129,10 +138,13 @@
     </div>
   </div>
   <p class="inline-block m-0">
-      Powered by: 
-      <i class="fa-brands fa-cc-stripe fs-3"></i>
+      Powered by: <a href="https://stripe.com/" target="_blank" rel="noopener" aria-label="Stripe (link opens in a new tab)">
+      <i class="fa-brands fa-cc-stripe fs-3"></i></a>
   </p>
   <p class="inline-block">
-        <small> Developed by <a href="https://github.com/JoseMGuerra/hand-crafted-paper-e-commerce" target="_blank" rel="noopener" aria-label="Find me on Github (link opens in a new tab)">Jose Guerra <i class="fa-brands fa-github"></i></a> for educational purposes only</small>
+    Developed by Jose Guerra for educational purposes only
+  </p>
+  <p class="inline-block">
+    &copy; {% now 'Y' %} Hand-Crafted Designs. All Rights Reserved.
   </p>
 </footer>
